@@ -1,0 +1,806 @@
+Application security
+	I. Input Validation
+		a. Ensure data inputs are valid
+		b. Syntactic validation
+			i. Input types and length are correct
+			ii. Example
+				1) SSN only has 9 digits so only allows 9
+		c. Semantic validation
+			i. Example
+				1) Start date
+		d. Use of schemas
+			i. Define structure and content
+		e. This prevents SQL attacks
+	II. Whitelisting and Blacklisting
+		a. Blacklisting
+			i. Banning characters
+				1) To prevent attacks
+			ii. Hard to maintain
+				1) Due to different languages 
+		b. Whitelisting
+			i. Acceptable character list
+			ii. Can break something 
+	III. HTTP Headers
+		a. Can be used to upload files
+		b. Leaked information
+			i. Internal hostnames
+			ii. Backend servers/applications
+	IV. Code signing
+		a. Use of certificates
+		b. Software author
+		c. Code integrity
+		d. Digital signatures
+	V. Secure cookies
+		a. Do not include/store sensitive information
+		b. HTTPS vs HTTP
+			i. HTTPS helps prevent MITM and eavesdropping
+		c. Secure cookie flag
+			i. Cookie integrity
+			ii. Can be bypassed
+	VI. Static Code analysis
+		a. Automated scan
+		b. Code/software is not running
+		c. Good for source code
+		d. Early detection is SDLCs
+	VII. Dynamic code analysis
+		a. Automated scan
+		b. Code/Software is running
+		c. Analyzing code behavior/interaction
+	VIII. Manual code analysis
+		a. Slow process
+		b. Not automated
+		c. Line by line analysis 
+		d. Open to interpretation
+	IX. Fuzzing
+		a. Automated process
+		b. Inputs
+			i. Random data
+			ii. Invalid data
+			iii. Unexpected data
+				1) How does the software respond
+					a) Error messages
+					b) Memory leaks
+					c) Crashes
+					d) Buffer overflow
+
+Physical security
+	I. Physical security
+		a. Bollards, barricades, fencing
+			i. First line of defense
+		b. Mantrap
+			i. Turnstile
+			ii. Mid way point before public access and secure location
+			iii. Stops tailgating
+		c.  Alarms
+		d. Signage
+		e. Cameras and Close caption tv (CCTV)
+			i. Motion recognition
+			ii. Object detection
+		f. Faraday cage
+			i. Blocks electromagnetic interference 
+		g. USB Data blockers
+		h. Protected port covers
+			i. Blocks ethernet or other ports
+	II. Sensors
+		a. Motion detectors
+		b. Noise detectors
+		c. Pressure sensors
+		d. Moisture detectors
+		e. Temperature monitoring
+		f. Proximity reader
+			i. Key fob
+			ii. Smart card
+	III. Locks
+		a. Biometrics
+			i. Voice
+			ii. Face
+			iii. Eye
+			iv. Finger print
+		b. Electronic
+			i. Smart card
+			ii. PIN
+			iii. Key fob
+		c. Physical lock and key
+		d. Cable locks
+	IV. Personnel
+		a. Guards
+		b. Reception
+			i. Visitor logs
+			ii. Access control roster
+		c. Robot Sentries
+		d. Two-person control
+	V. Secure areas
+		a. Air gapped networks/system
+			i. Network won't be connected to internet, wifi, routers
+			ii. Have to be physically connected like serial ports
+		b. Vaults and safes
+		c. Hot isle / Cold isle
+			i. HVAC system for data center
+			ii. CRAC - Computer room air condition system
+
+
+Wireless security
+	I. Cryptographic protocols - WEP 
+		a. Wired Equivalent Privacy
+		b. Released in 1999
+		c. Very weak
+			i. Shouldn't use
+			ii. Uses a static key - never changes
+			iii. 64 bit or 128 bit key
+			iv. RC4 stream cipher
+			v. CRC checksum
+	II. Cryptographic protocols - WPA
+		a. Wi-Fi Protected Access
+			i. Weak
+			ii. Don't use
+			iii. Uses Temporal Key Integrity Protocol
+			iv. Per-packet encryption
+				1) New key for each packet
+			v. RC4 stream cipher
+			vi. Message Integrity Check 
+				1) 48 bit checksum
+				2) Little stronger than WEP's CRC
+	III. Cryptographic Protocols - WPA2
+		a. 802.11i or Wi-Fi Protected Access 2
+		b. Stronger
+			i. Uses CCMP
+			ii. Advance encryption standard (AES)
+			iii. 128-bit Key
+			iv. Usable but weak
+	IV. Cryptographic Protocols - WPA3
+		a. Wi-Fi Protected Access 3
+		b. Strongest
+			i. Uses SAE - Simultaneous Authentication of Equals
+			ii. 128-bit for personal
+			iii. 192-bit encryption for enterprise
+				1) AES 256
+	V. Authentication protocol
+		a. EAP/PEAP
+		b. EAP-FAST
+		c. EAP-TLS
+		d. EAP-TTLS
+			i. GO BACK AND ADD from Cryptography page
+	VI. Authentication Methods -Pre-shared Key
+		a. Pre shared value
+		b. Called a passphrase
+			i. It's a password
+	VII. Authentication Methods - Enterprise
+		a. 802.1X
+		b. WLAN 
+		c. Layered 
+		d. RADIUS server
+			i. Remote access dial in user service = RADIUS
+			ii. RADIUS uses UDP
+	VIII. Authentication Methods - Wi-Fi protected Setup
+		a. Don't use
+		b. Push button on router > on the device enter a router pin
+	IX. Open Authentication method
+		a. Lack of authentication
+	X. Authentication methods - Captive Portal
+		a. Before you can join wireless you have to sign in 
+		b. Acceptable use policy 
+			i. Terms and conditions
+			ii. For liability 
+	XI. Installation Considerations
+		a. Channel overlay
+			i. Congestion
+			ii. 11 Channels
+				1) 1,6, and 11 don't overlap
+		b. Wireless Access Point (WAP) Placement
+			i. Greatest coverage
+		c. Heatmaps and Site Surveys
+			i. Heatmap shows strength of network
+		d. Controller and AP security 
+
+Secure data destruction
+	I. Paper documents / analog documents
+		a. Burning
+			i. Paper documentation
+		b. Shredding
+			i. Security levels
+				1) How finely does it shred 
+				2) P2-P6
+				3) P4 = commercial level
+				4) P5 = Espionage proof
+				5) P6= DoD/NSA, Military
+		c. Pulping
+			i. Same process as recycling
+			ii. Reduce documents to a paper slurry
+		
+	II. Digital data
+		a. Overwriting
+			i. Writing new data over deleted data
+			ii. DoD 5220.22 data sanitization standard
+				1) Department of Defense standard for overwriting
+				2) 3 passes
+					a) Pass 1 overwrites with 0s, pass 2 overwrites with 1s, pass 3 is a random bit pattern 
+		b. Pulverizing
+			i. Media destructions
+		c. Degaussing
+			i. Strong magnetics
+			ii. Commercial grade
+		d. Incineration
+			i. Complete destruction of all media components
+
+Host Security - Endpoint Protection
+	I. Antivirus and Anti-Malware
+		a. Signatures / definitions
+			i. Defines what a malware or virus looks like
+		b. Behavior monitoring
+			i. Acts like a virus it is a virus
+		c. Heuristics and AI
+			i. Good guess of what virus
+			ii. AI will learn 
+		d. Cloud-based submissions
+			i. Vendors will collect information into a repository
+		e. Sandboxing vs. Quarantining
+			i. Quarantining is locks it down, can't move until action
+			ii. Sandboxing is a box that allows it to act to learn more about the malware
+	II.  EDR - endpoint Detection and response
+		a. Endpoint threat detection 
+		b. Monitor's endpoint behavior
+			i. Real time
+		c. Uses indicators of compromises
+		d. Examples
+			i. Fireeye EDR
+			ii. Datashield EDR
+	III. Data loss prevention / protection
+		a. Protection of data in motion
+		b. Monitor and control data movement
+		c. Data classification
+		d. Examples
+			i. PII - Personally identifiable information 
+			ii. Research and Development
+			iii. Trade secrets
+	IV. Host-based Intrusion Detection and Prevention
+		a. Host-based intrusion detection
+			i. Pass software
+			ii. Just looking at Network adapter on host
+			iii. Monitor, detection, and alerts
+		b. Host-based intrusion prevention
+			i. Active software
+			ii. Monitors, detection, alerts
+			iii. Countermeasures
+	V. Host-based Firewalls
+		a. Monitor traffic on the host
+		b. Implicit deny
+			i. Anything that is not set to allow will be denied 
+		c. Monitoring
+			i. Disk activity
+			ii. Memory
+			iii. Network
+	VI. Next Gen Firewalls
+		a. Marketing term
+		b. Application inspection
+			i. Application layer
+		c. SSL inspection
+			i. Presentation layer
+		d. State awareness (TCP)
+			i. Between transport and Session layer
+		e. Packet inspection
+			i. Network layer
+		f. HIDS/HIPS
+		g. DLP
+		h. DNS filtering
+		i. URL filtering
+
+Hardening
+	I. Basics
+		a. Credentials 
+			i. Change defaults
+		b. Account management
+			i. Administrative Accounts
+		c. Default configurations
+			i. OS
+			ii. Applications
+		d. Patch Management
+	II. Firmware Protection
+		a. UEFI vs MBR
+			i. UEFI is better than MBR
+		b. Updates
+		c. TPM - Trusted Platform Modules
+		d. Secure boot
+		e. Protection out of band management
+	III. Services and ports
+		a. Ports
+			i. Logical end-point connection
+			ii. Identifies a service
+				1) Can be manipulated to not a direct service
+		b. Services
+			i. Provides networking resources 
+			ii. Increased attack surface with increase of service
+			iii. Can be exploited by attackers
+				1) Turn off services not being used
+	IV. Firewall
+		a. Implicit deny
+		b. Services
+			i. Only allow trusted services
+		c. HIDS/HIPS
+			i. Host base instruction detection system
+			ii. Host base instruction Prevention system
+		d. Stateful Monitoring 
+	V. Anti-virus
+		a. Real time protection
+		b. Automated scanning
+		c. Platform and signature updates
+		d. Logging
+		e. Configure default actions
+	VI. Encryption
+		a. File encryption
+			i. EFS
+			ii. APFS
+			iii. GPG
+		b. Disk encryption
+			i. Bitlocker - Win
+			ii. File vault - MAC
+			iii. LUKS - Linux
+	VII. Registry
+		a. Windows only
+		b. Configuration database
+		c. Least privilege
+			i. Admins - modify
+			ii. Standard users - read access
+		d. C:\windows\system32\configuration
+
+Mobile device deployment
+	I. Unified Endpoint Management
+		a. Single point of management
+		b. Combines MDM, Enterprise mobility management (EMM), & Mobile application management (MEM)
+		c. Manages
+			i. Traditional and non-traditional
+			ii. PCs
+			iii. Laptops
+			iv. Smartphones
+			v. Tablets
+		d. Examples
+			i. Microsoft endpoint security manager
+				1) Microsoft Intune has ported /absorbed by ESM
+			ii. Malwarebytes UEM
+			iii. LBM security MaaS360
+			iv. Ivanti UEM
+	II. SEAndroid
+		a. Part of the Android security model
+		b. Uses SELinux
+		c. Implements implicit deny
+		d. Application sandboxing
+		e. Two modes
+			i. Permissive mode
+				1) Warns but allows 
+			ii. Enforcing mode
+				1) Warns and stops
+	III. MicroSD HSM
+		a. MicroSD form factor
+		b. Secures mobile device 
+		c. Functions of MicroSD
+			i. Network authentication
+			ii. Data storage encryption
+			iii. Key generation, rotation and protection
+			iv. End to end communication 
+	IV. Mobile deployment models - BYOD
+		a. BYOD - bring your own device
+		b. Employee assumes complete responsibility
+		c. Security management can be difficult
+		d. Less sensitive data
+		e. Least expensive upfront cost
+		f. Most Vulnerable 
+	V. Mobile deployment models -CYOD
+		a. Choose your Own Device
+		b. Limited selection, preapproved devices
+		c. Preconfigured security controls
+		d. Reduce device variety
+		e. Streamlined support
+		f. Slow deployment
+		g. Secure
+	VI. Mobile deployment models - COPE
+		a. Corporate owned, personally enabled
+		b. Most expensive
+		c. Company assumes complete responsibility
+		d. Paid for by company
+		e. Greatest company control
+		f. Most secure
+	VII. VDI - Virtual desktop infrastructure
+		a. Thin clients connect to a centralized server to use a desktop
+		b. Running Remotely
+		c. Viewing locally 
+		d. Desktop environment is fully managed
+			i. Persistence 
+				1) When logging off the user changes stays
+			ii. Non persistence
+				1) When logging off the user changes don't stay
+				2) New session is a clean slate 
+
+Mobile device connections
+	I. Cellular
+		a. International Mobile Equipment Identity (IMEI)
+			i. Worldwide hardware Identifier
+			ii. MAC address for Cellular
+			iii. Used in GSM and  Unified Threat Management (UTM) Networks
+			iv. Potential for spoofing
+		b. International Mobile Subscriber Identity (IMSI)
+			i. Worldwide unique subscriber identifier
+			ii. GSM and UTEMS network
+			iii. Stored in Subscriber Identity modules (SIM)
+	II. Wi-Fi
+		a. IEEE 802.11* standard
+			i. .11a  Wi-Fi 2
+				1) 54 Mbps
+				2) 5 GHz
+			ii. .11b - Wi-Fi 1
+				1) 11Mbps
+				2) 2.4 GHz
+			iii. .11g - Wi-Fi 3
+				1) 54 Mbps
+				2) 2.4 GHz
+			iv. .11n - Wi-Fi 4
+				1) 600 Mbps
+				2) 5 GHz & 2.4 GHz
+			v. .11ac - Wi-Fi 5
+				1) 3.6Gbps 
+				2) 5GHz
+			vi. .11ax - Wi-Fi 6
+				1) 15Gbps
+				2) 2.4GHz,5GHz, & 6GHz
+	III. NFC - near field communication
+		a. Short-range
+			i. 10cm/4 inches
+		b. 13.56 MHz base frequence
+		c. Simple setup
+		d. File/data transfer
+	IV. Infrared
+		a. Short range communication
+			i. 1 Meter/3.28ft
+		b. Sensitive LoS communication
+		c. IrDA
+		d. 16 Mbps, but can vary in speeds
+	V. Bluetooth
+		a. Data Transfer
+		b. Fixed and mobile devices
+		c. Discovery and pairing
+		d. 2.4Ghz
+		e. Standards
+			i. 1.0 & 1.2 (legacy)
+				1) 732kbps
+			ii. 2.0 & 2.1 (+EDR)
+				1) 3 Mbps
+			iii. 3.0 (+HS)
+				1) 24 Mbps
+			iv. 4.0 & 4.2 (+BLE)
+				1) 3Mbps
+				2) Lower energy
+	VI. USB
+		a. Point to point communications
+		b. Data transfer
+		c. Standards
+			i. 1.1
+				1) 12Mbps
+			ii. 2.0
+				1) 480 Mbps
+			iii. 3.2
+				1) Gen 1
+					a) 5 Gbps
+				2) Gen 2
+					a) 10 Mbps
+				3) Gen 2x2
+					a) 20 Gbps
+			iv. 4
+				1) 40Gbps
+	VII. GPS
+		a. Components
+			i. Space segment
+			ii. Control segment
+			iii. User segment
+		b. Global navigation systems
+			i. GPS
+			ii. GLONASS
+			iii. Galileo
+			iv. BeiDou
+	VIII. RFID - Radio frequency identifier
+		a. Electromagnetic fields
+		b. Identify and track tags
+		c. Tags attached to objects
+		d. Tag types
+			i. Passive
+				1) Power by RFID reader
+			ii. Active tags
+				1) Battery power
+	IX. Security concerns
+		a. Eavesdropping
+		b. Data leaks
+		c. Replay attacks
+			i. Capture info and use at a later time
+		d. Spoofing attacks
+			i. Masquerading as a legit user
+		e. Unauthorized use
+			i. Example: BlueJacking
+
+Specialize systems
+	I. Supervisory Control and Data Acquisition (SCADA) and Industrial control system (ICS) system
+		a. Critical Infrastructure
+		b. Types
+			i. Facilities
+			ii. Industrial
+			iii. Manufacturing
+			iv. Energy 
+			v. Logistics
+	II. Internet of things (IOT)
+		a. Sensors
+		b. Smart devices
+		c. Wearables
+		d. Facility automation
+		e. Smart meters
+	III. Embedded Systems
+		a. Raspberry Pi
+		b. Field programmable gate array (FPGA)
+		c. Arduino
+		d. SoCs
+			i. System on a Chip
+	IV. Additional specialized system
+		a. Medical systems
+		b. HVACS
+		c. Vechicles, aircraft, and drones
+		d. RTOS
+			i. Real time operating system
+		e. Surveillance system
+		f. VoIP
+		g. MFD Printers
+			i. Multi-functioning device
+	V. Communications 
+		a. 5G
+			i. Low, mid, and high-band
+			ii. 100 times faster than 4G
+			iii. Greater network capacity
+		b. Narrow band
+			i. Lower transmit power
+			ii. Low cost
+			iii. NB-Iot
+				1) Narrow band IoT
+			iv. LPWAN
+		c. Baseband radio
+			i. A frequency prior to modulation 
+			ii. Transmitted over radio links
+		d. Zigbee
+			i. Low power/data rates
+			ii. IEE 802.15.4
+			iii. LR-WPANs
+				1) Low rate wireless personal network
+	VI. Constraints
+		a. Crypto graphic concerns
+			i. Lack of encryption
+			ii. Weak encryption
+		b. Authentication concerns
+			i. Weak authentication if any
+				1) User authentication
+				2) Hop between devices
+			ii. Insecure defaults
+			iii. Implied trust
+				1) Turn this off,
+		c. Cost associated with risk
+			i. Sensitive data in excessive amounts 
+		d. Patch management
+			i. Proprietary
+				1) Making it harder to find patches
+			ii. Decentralized
+			iii. Heterogeneous device
+				1) Made by different vendors
+			iv. Physical security 
+				1) Remote locations
+				2) Geographically dispersed
+
+Network Security segmentation
+	I. Network segmentation
+		a. Performance
+		b. Security
+			i. If devices can listen to other devices it can lead to a data leak
+		c. Reduces Broadcasting / broadcasting storms
+		d. Layer 2 - VLANs
+			i. Virtual local area network
+				1) Divides switches ports to multiple Networks
+		e. Layer 3 - Subnets
+			i. Apply ACS - allow or deny traffic
+	II. DMZs
+		a. Perimeter network 
+			i. Normally between two firewalls or two interfaces on the same firewall
+			ii. Between Public and Private network
+			iii. Prevents access to private network but allows access to things such as Web server
+	III. VLANs
+		a. Private network
+		b. Reduces Broadcast communication
+		c. Layer 3 allows communication between VLANs
+			i. Without it does not allow communication
+	IV. Intranets
+		a. LAN segments
+		b. Doesn't allow public access
+		c. Internal
+	V. Extranet
+		a. WAN range across public networks
+		b. VPN tunnel over a public network
+		c. To get two internal networks to communicate 
+	VI. Traffic Segmentation
+		a. North-south traffic
+			i. Traffic coming into internal network
+			ii. Traffic leaving internal network
+			iii. Protected with Firewalls, NIPS, DMZs
+		b. East-west
+			i. Internal traffic
+			ii. Client to Client
+			iii. Protected with VLANs, Subnets, HIPS,  Access Control lists (ACL)
+		c. Zero-trust network
+			i. Trust nobody
+
+VPN
+	I. VPN
+		a. Virtual private network
+		b. Secure communication over insecure networks 
+		c. Protects privacy 
+	II. Remote access VPN
+		a. Tunnel across public network
+	III. Site to Site VPN
+		a. Multiple remote branches connecting to a headquarters
+			i. Connects router to router 
+			ii. Through tunneling
+			iii. Routers encrypt when going through the tunnel
+				1) Limited by processing power on routers
+	IV. Split Tunnel
+		a. One tunnel to Corp. gateway for corp resources.
+			i. To encrypt and secure Corp. information
+		b. Bypass or skips tunnel to access public websites
+	V. VPN Protocols
+		a. Creates tunneled communication
+		b. Does not secure communications
+		c. Coupled with encryption protocol
+			i. Point to Point tunneling protocol (PPTP)
+				1) Widely supported
+				2) Weak encryption 
+					a) Microsoft point to point encryption
+				3) Port 1723
+		
+			i.  Layer 2 tunneling protocol (L2TP) 
+				1) Widely support
+				2) security 
+				3) Performance degradation
+				4) Complex
+				5) Firewall blocking
+				6) Encryption
+					a) IPsec
+						i) UDP port 500 & 4500
+					b) AES, Certificates
+				7) Port 1701
+			ii. Secure socket tunneling protocol (SSTP)
+				1) Firewall Traversal
+					a) Certain mechanisms so that voice and video traffic
+				2) Only windows compatiblity
+				3) Proxy issues 
+				4) Encryption
+					a) SSL 3.0
+					b) Weak
+			iii. Internet key exchange version 2 (IKEv2)
+				1) Mobility support
+				2) Limited support
+				3) Firewall blocking
+				4) Encryption
+					a) IPsec
+						i) UDP port 500 & 4500
+					b) Advance encryption standard (AES)
+					c) Certificates
+					d) strong
+
+Proxies and Load balancing
+	I. Forward Proxies
+		a. Proxy is between Client request to web server and internal network.
+		b. Proxy will get the request and create a new request
+			i. Forwards request to internet resource
+	II. Reverse Proxy
+		a. Request outside internal network 
+		b. Internal Resource request from outside 
+		c. Proxy will forward request to internal resource and will send the request back outbound / Outside resource request
+	III. Load balancing
+		a. Client asks for resource
+			i. Goes to Load Balancer's Virtual IP address
+				1) Virtual IP address for failover incase a NIC goes down 
+			ii. Active-Active Load balancing
+				1) Load Balancer will disrupt workload across multiple resources evenly 
+			iii. Active-Passive
+				1) Have multiple NICs where one is ready but the other is on standby waiting if NIC goes down
+				2) Helpful for integrity/availability of services 
+	IV. Load Balancing Scheduling
+		a. Diffferent techniques for distrubuting workloads across resources
+		b. Round Robining 
+				1) Define sequence
+			i. Waited Round robins
+				1) Weighted means adding granularity
+					a) Adds parameters 
+		c. Least connection
+				1) Finds least used device and redirect traffic to it
+			i. Waited Least connections
+				1)  Additional parameters 
+
+Firewalls
+1. Firewall
+	I. Stateless
+		a. Between two networks
+			i. Packet inspection
+			ii. Looking at source and destination IP
+			iii. Looking at Port numbers
+			iv. Lower on the OSI model
+	II. Stateful 
+		a. Between two networks
+			i. Keep track of connection states
+				1) Prevents floods of packets; Syn floods
+			ii. Can actual respond to request packets on behalf of the network
+	III. Content / URL filtering
+		a. Prevents connection based on database 
+			i. URL list
+		b. Content blocking
+			i. Text strings, images, embedded objects
+	IV. NAT Gateways
+		a. Network Address Translation
+		b. Outgoing traffic
+			i. Stores source IP
+			ii. Changes it to public IP address
+		c. Incoming traffic
+			i. Changes public IP to source IP 
+		d. Able to use in the Cloud for private networks in the cloud
+2. Hardware vs Software Firewall
+	I. Hardware
+		a. Inspects traffic
+		b. Network firewall
+		c. Appliance based firewall
+	II. Software
+		a. Host based firewall
+		b. Permits traffic on the host itself
+	III. Cloud firewall / virtual firewall 
+		a. Controlling communication in cloud resources
+
+Port security
+	I. Port security - Broadcast storms
+		a. Communication looping between switches
+		b. Broadcast goes out on all ports and redirect back
+	II. Loop prevention
+		a. STP - Spanning tree protocol 
+		b. Block ports to stop communication between switch
+	III. BPDU Guard
+		a. Bridge protocol data unit
+		b. Root bridge
+		c. Only certain ports are authorized to send BPDU
+	IV. DHCP Snooping
+		a. Only allows DHCP communication on a specific port
+		b. Stops unauthorized DCHP server
+	V. Mac Filtering
+		a. Stops unauthorized access by checking Mac address
+		b. Closes port
+	VI. Port Mirroring
+		a. Used for monitor station
+		b. Mirrors traffic from ports to monitor station
+		
+		
+
+NIDS and NIPS
+	I. Network Intrusion Detection system 
+		a. Passive device
+			i. Monitoring
+			ii. Detect and alert Intrusions
+				1) Email
+				2) Text
+				3) Notification
+			iii. Built into newer firewalls
+			iv. Does not stop intrusion just detects it
+	II. Network intrusion Prevention system
+		a. Active device
+			i. Prevents intrusion 
+		b. Has all the functions of NIDS
+		c. New firewalls have this
+	III. Detection methods
+		a. Signature-based
+			i. Database of known hashes/signature
+			ii. Similar to what AVs do
+		b. Heuristic-based
+			i. Set of specific pattern
+		c. Behavior-Based
+			i. Set of actions that match a threat's behavior
+		d. Anomaly-based
+			i. Requires a baseline establishments
+				1) Learning period
+			ii. Detects behavior against baseline
+				1) Has false positive
+				2) Has false negatives
+	
