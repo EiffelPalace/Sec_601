@@ -1,0 +1,447 @@
+Authentication and Authorization
+	I. Identity
+		a. Your Name
+		b. Username
+		c. Identification number
+	II. Authentication
+		a. Prove who you are
+			i. Password
+			ii. Fingerprint
+			iii. Smartcard
+		b. Validates credentials
+	III. Authentication factor
+		a. Something you know
+			i. Pin
+			ii. Password
+			iii. Q&A
+			iv. Pattern
+		b. Something you can do
+		c. Someone you know
+		d. Knowledge-based authentication
+			i. Static KBA
+				1) Doesn't change 
+				2) Example: 3 secret questions
+			ii. Dynamic KBA
+				1) Identity verification service
+				2) Changes questions
+		e. Something you have
+			i. Smart key
+			ii. Physical item
+		f. Something you are / exhibit
+			i. Fingerprint
+			ii. Facial 
+			iii. Retina scan 
+		g. Somewhere you are
+	IV. Authorization
+		a. What permissions do you have
+		b. What can you access
+	V. Accounting
+		a. History of access
+			i. Security logs
+			ii. Event logs
+			iii. Audit logs
+	VI. IAAA
+		a. Identity
+		b. Authentication
+		c. Authorization
+		d. Accounting
+	VII. Authentication management
+		a. Password Keys
+		b. Biometrics
+		c. Mobile deices
+		d. YubiKey
+		e. FIDO U2F, UAF, CTAP, & FIDO 2
+		f. Password Vaults
+			i. LastPass
+			ii. Windows Credential manager
+			iii. Key Vault MacOS
+		g. Trusted platform modules (TPM)
+			i. Embedded crypto-microcontroller
+				1) CPU
+			ii. Stores authentication artifacts
+				1) Passwords
+				2) Encryption Keys
+				3) Certificates
+				4) Platform configuration states 
+		h. Hardware security modules
+			i. Hardware-based appliance
+			ii. Manages cryptographic information
+				1) Securing keys
+				2) Encryption and decryption
+				3) Authentication
+				4) Digital signing
+			iii. Mobile TPM
+
+Authentication methods
+	I.  Authentication methods
+		a. Directory services
+		b. Federation
+		c. SSO
+		d. Attestation
+	II. Directory services
+		a. Centrally manage
+			i. Users
+			ii. Groups
+			iii. Computers
+			iv. Nodes
+			v. Folders, files
+			vi. Services
+				1) Stored in directory service database
+		b. Defined by X.500 standard
+			i. Standard method to centralize managing of object on a network
+			ii. Objects are represented by a distinguished name (DN)
+				1) CN=sshd,OU=SecPlusUser,DC=secplus,DC=local
+					a) CN = Common name
+					b) OU = Organizational Unit name
+					c) DC=domain Component
+					d) DC = domain component
+	III. Federation (services)
+		a. Trust relationship between two sources
+			i. Service provider service
+				1) Has the service users want to access
+				2) Goes to identity provider to valid Identity
+					a) Connects to identity provider with
+						i) SAML
+						ii) OPID
+						iii) OAuth
+			ii. Identity provider service
+				1) Verifies identity and sends it back to the service provider
+			iii. Will use the database of each source to authenticate identities
+		b. Example
+			i. Sign in with google
+			ii. Sign in with Microsoft
+			iii. SSO
+	IV. Attestation
+		a. Config state of a node sent to Attestation service
+		b. Attestation service compares config state to a security base line
+			i. If they're the same they get access
+			ii. If they're different you can't get access
+	V. Tokens
+		a. Authenticate identities
+		b. Electronically stored personal info
+		c. With or Without password 
+		d. Types
+			i. Connected
+				1) Physical connection
+				2) Something you have
+					a) Smart card, FIDO, YubiKey
+			ii. Disconnected
+				1) No physical connection
+				2) Authenticator app, RSA secureID
+			iii. Contactless
+				1) No physical connection
+				2) Contactless payment (NFC)
+					a) Apple pay
+					b) Google pay
+	VI. One time password
+		a. HOTP
+			i. HMAC-Based OTP
+				1) Uses HMACs
+					a) Uses a secret key called a Seed
+					b) Applies counter to seed
+						i) HMAC is operation runs
+						ii) Gets HOTP Code
+			ii. Code does not expire
+		b. Time Based OTP
+			i. Uses seed (secret key)
+			ii. Uses a timer instead of a counter
+				1) Applies to seed
+				2) To add expiration to the OTP
+				3) Add HMAC operation
+					a) Creates TOTP
+
+Biometrics
+	I. Something you are
+		a. Physical characteristics
+		b. Commonly added to 2FA
+	II. Biometrics Methods
+		a. Fingerprint
+		b. Voice
+		c. Hand Geometry
+		d. Retina and Iris
+		e. Facial
+		f. Veins
+			i. Cardiovascular signature
+		g. Gait Analysis
+			i. How we walk
+			ii. Distance between our feet when we walk
+	III. Efficacy rates
+		a. FRR - Fales rejection rate
+			i. Also called Type 1 error
+			ii. Authorized user is rejected
+			iii. Availability lost
+		b. FAR - False acceptance rate
+			i. Also called type II error
+			ii. Unauthorized user is granted access
+			iii. Loses Integrity and confidentiality 
+		c. CER - Crossover error rate
+			i. Also called Equal error rate
+			ii. Where FRR and FAR are equal
+				1) Defines how accurate Biometrics are
+					a) Higher CER is lower accuracy
+					b) Lower CER is higher accuracy
+
+PAP - Password authentication protocol & CHAP - Challenge handshake Authentication protocol 
+	I. Authentication protocols
+		a. Authenticate Identities 
+		b. Prevents sniffing for credentials 
+	II. Password Authentication Protocol (PAP)
+		a. Allows to authentication
+		b. Clear text protocols
+			i. Able to see password
+			ii. Insecure
+	III.  Challenge handshake Authentication protocol (CHAP)
+		a. Example:
+			i. Nodes sends Authentication request
+			ii. Authentication device sends back a challenge to the node
+				1) Challenge is random bits
+				2) Node encrypts challenge with the node's password
+			iii. Node sends encrypted challenge to authentication device
+			iv. Authentication device uses Node's password to decrypt challenge
+		b. Password is on Node and authentication device
+			i. Password does not go over a network at all
+				1) Prevents sniffing
+		c. Variants
+			i. CHAP
+				1) Non-windows environments
+			ii. MS-CHAP
+				1) Microsoft's CHAP implementations
+				2) Weak
+			iii. MS-CHAPv2
+				1) Mutual authentication
+					a) Both endpoints authenticate
+				2) Stronger cryptographic keys
+				3) Can combine with other frameworks to be more secure
+
+Authentication protocols: EAP and 802.1x
+	I. EAP - Extensible authentication protocol
+		a. Framework for authentication
+		b. Used in wireless networks
+		c. Expands upon Point to point Authentication (PPP)
+		d. Supports multiple authentication types 
+		e. EAP Methods
+			i. EAP-FAST
+				1) Fixable authentication via secure tunneling
+				2) Developed by cisco
+				3) Used in wireless and PPP communication
+			ii. EAP-TLS
+				1) Transport layered security
+				2) Mutual Authentication
+					a) Certificate
+					b) Token Based
+					c) Smartcard
+			iii. EAP-TTLS
+				1) Tunneled TLS
+					a) Creates secure tunnel 
+					b) Only on Windows 8+
+	II. 802.1X
+		a. NOT 801.1X 
+			i. Wireless LAN standards
+		b. Most used wireless networks
+		c. Port base authentication 
+		d. Components
+			i. Supplicant - Wireless client
+			ii. Authenticator - WLAN controller
+			iii. Authenticator server - RADIUS Server
+
+Authentication Protocols: Radius and TACACS
+	I. RADIUS- remote authentication dial-in user services
+		a. Open standard
+		b. Has been around for a long time
+		c. Uses UDP ports
+			i. 1812 
+				1) Authentication requests
+			ii. 1813
+				1) Accounting 
+			iii. 1645 - Legacy
+			iv. 1646 - Legacy
+		d. Centralizes AAA
+			i. Authentication
+			ii. Authorization
+			iii. Accounting 
+		e. In action
+			i. Authentication request from Access client goes to RADIUS Client 
+				1) RADISU Clients can be VPN server, 802.1x AP, Dial-up server
+			ii. RADIUS Client sends it to RADIUS Server
+				1) RADIUS server does AAA
+			iii. RADIUS Server sends back a RADIUS Challenge 
+			iv. If the RADIUS challenge is completed; Password enter correctly, access is granted
+	II. TACACS - Terminal access controller access control system
+		a. TACACS is Cisco Proprietary 
+			i. Separates the AAA roles 
+				1) Need separate servers for each role
+			ii. Used TCP
+			iii. Encrypts password
+		b. TACACS+ 
+			i. Used TCP and encryption
+	III. Comparison
+		a. 
+
+Authentication Protocols: Kerberos
+	I. Kerberos (Port 88)
+		a. Developed by MIT
+		b. Open-source
+		c. Time-sensitive authentication
+		d. Default for MS active Directory 
+		e. Components
+			i. Authentication server
+			ii. Key distribution server
+			iii. Ticket-granting ticket
+			iv. Ticket-granting service 
+				1) In windows environment is bundled in domain controller
+				2) In Non-windows environment it can be different domain controllers
+		f. In-Action
+			i. Kerberos Server is an AD server
+			ii. Client sends Auth request to server
+			iii. Server sends Auth Verified /encrypted Ticket Granting Ticket (TGT)
+				1) Time stamped TGT
+			iv. TGT is sent to Ticket granting service (TGS) with name of resource
+				1) Server issues Session Key to client
+				2) Session key is used to access Resource server
+
+Password Policies
+	I. Password policy
+		a. Collection of required attributes applied to passwords
+		b. Examples
+			i. Complexity
+				1) Upper & Lower case letters, symbols, numbers
+			ii. History/reuse
+			iii. Length
+			iv. Expiration
+
+	Access Control Schemes 
+	I. Access control 
+		a.  Controlling access to resources
+		b. Minimize risk
+	II. MAC - Mandatory Access Control
+		a. Subject
+			i. Identities to control access to objects
+			ii. Access Level 
+				1) Secret Clearance
+		b. Object
+			i. Resources
+				1) Servers, service, network, etc
+			ii. Sensitivity Label
+				1) Secret
+		c. Very expensive
+	III. DAC - Discretionary Access Control
+		a. Subject
+			i. Owner or Administrator
+			ii. Set access level
+		b. Object
+		c. Access Control List (ACL)
+			i. Given access from owner to object
+		d. Example
+			i. Permissions
+				1) Modify, read, write, owner
+		e. Implicit Deny
+			i. Not on the list (ACL) denied access
+		f. Explicit Deny
+			i. Specifically deny this subject
+	IV. Role-based Access Control (RBAC)
+		a. Predefined organizational roles
+			i. Assign a pre-defined role
+			ii. Predefined role only has specific access 
+	V. Rule-based Access Control
+		a. Predefined Criteria (rule)
+		b. Rule to allow access
+			i. What traffic do we allow
+			ii. What range of IP do we allow
+			iii. Example: Firewall
+	VI. Attribute base access control
+		a. Attributes to grant access
+			i. Name
+			ii. Department
+			iii. Position
+			iv. Building number
+			v. Time zone
+		b. Resource Attributes
+			i. Name
+			ii. Type
+			iii. Modification time 
+	VII. Conditional Access
+		a. Conditions to grant access
+		b. Previously defined conditions
+		c. examples
+			i. Location
+			ii. Operating system
+			iii. Device
+			iv. IP
+			v. Subnet
+	VIII. Privilege access management (PAM)
+		a. Controlling and monitoring
+			i. User with High level permissions
+			ii. How were permissions used
+		b. Comprehensive auditing
+			i. Internal user activity
+			ii. External vendor activity 
+		c. PAM Solutions
+			i. Thycotic
+			ii. CyberArk
+			iii. Arcon
+			iv. One identity SafeGuard 
+
+Access Control - Account types 
+	I. Administrator
+		a. Full system access
+		b. Needs to be protected
+			i. Threat actors
+			ii. Standard users
+				1) Don't need full access
+		c. Principle of least privilege
+			i. If a user doesn't need the privilege then lock out access
+		d. Examples
+			i. Windows administrator
+			ii. *nix-based root user 
+				1) Linux, MAC, Unix
+	II. Standard Users
+		a. Perform most activities
+			i. Anything without UAC
+		b. No system-wide changes
+			i. Installing software
+			ii. Reg changes
+			iii. Time and date
+		c. Security vs convenience 
+			i. Principle of least privilege
+	III. Guest accounts
+		a. Isolated use cases
+			i. Kiosks
+			ii. Shared computers
+				1) Classroom
+			iii. Limited access
+			iv. Use sparingly
+	IV. Service accounts
+		a. NPI - non person Identity 
+		b. Implement managed service accounts
+			i. Platform to show what this account used and what privileges it has
+		c. Remove unnecessary privileges 
+	V. Shared account
+		a. Non-repudiation
+			i. Repudiation is action is associated with a user
+			ii. Since this is a shared account you can't verify who the user was
+		b. Security vs. convenience 
+
+Account Policy
+	I. Account policies
+		a. Set of configuration parameters
+		b. User accounts
+		c. Computer accounts
+	II.  Access policies
+		a. Conditions granting or denying access
+			i. Network location
+			ii. Time-based
+			iii. IP Address 
+			iv. Subnet
+	III. Geolocation
+		a. Identifying users based on location 
+		b. Risky login
+			i. Log in on a location that is impossible
+				1) IE logs in USA then after an hour see a login from UK
+				2) Physically impossible to be in the UK in one hour
+	IV. Geofencing
+		a. Location-based logical boundaries
+		b. Inside fence you gain access, if outside the fence you are denied access
+			i. Real world - advertisements, Netflix
+	V.  Geotagging
+		a. Attaching location-based metadata to activity or action you are doing
+			i. Actions - going out to eat, going to the mall, etc.
