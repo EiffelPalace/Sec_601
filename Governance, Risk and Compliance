@@ -1,0 +1,607 @@
+Regulations, Standards and Frameworks
+	I. Regulations, Standards and Frameworks
+		a. Compliance and Regulatory frameworks are sets of guidelines and best practices. Organizations follow these guidelines to meet regulatory requirements, improve processes, strengthen security, and achieve other business objectives
+		b. These frameworks give us a common language that can be used to build culture of security 
+	II. PCI DSS
+		a. Build and Maintain  a Secure Network
+			i. Install and maintain a firewall configuration to protect cardholder data
+			ii. Do not use vendor-supplied defaults for system passwords and other security 
+		b. Protect Cardholder Data
+			i. Protected Stored cardholder data
+			ii. Encrypt transmission of cardholder data across open, public networks
+		c. Maintain Vulnerability Management program
+			i. Use and regularly update anti-virus software or programs
+			ii. Develop and maintain secure systems and applications
+		d. Implement strong access control measures
+			i. Restrict access to cardholder data by business need-to-know
+			ii. Assign a unique ID to each person with computer access
+			iii. Restrict physical access to cardholder data
+		e. Regularly Monitory and test our networks
+			i. Track and monitor all access to network resources and cardholder data
+			ii. Regularly test security systems and processes
+		f. Maintain an information security policy
+			i. Maintain a policy that addresses information security for employees and contractors 
+	III. Center for Internet Security (CIS)
+		a. Basic CIS Controls (1-6)
+		b. Foundational CIS Controls (7-16)
+		c. Organizational CIS controls (17-20)
+	IV. NIST CSF
+		a. Common Taxonomy and mechanism for organizations
+			i. Describe their current cyber security posture
+			ii. Describe their target stat for cybersecurity
+			iii. Identify and prioritize opportunities for improvement within the context of a continuous and repeatable process
+			iv. Assess progress toward the target state
+			v. Communicate among internal and external stakeholders about cybersecurity risk
+		b. Components
+			i. Core 
+				1) Desired cyber security outcomes organized in a hierarchy and aligned to armored detailed guidance and controls
+			ii. Profiles
+				1) Alignment of an organizations requirements and objectives, risk Appetit and resources using the desired outcome of the framework core
+			iii. Implementation tiers
+				1) A qualitative measure of organizational cyber security risk management practices 
+	V. NIST Risk management framework (RMF)
+		a. Promoting the development of security and privacy information systems throughout the system development life cycle (SDLC)
+		b. Steps
+			i. Prepare
+			ii. Categorize
+				1) System and information 
+				2) Stored or transmitted
+			iii. Select
+				1) Baseline security controls
+			iv. Implement
+				1) How the controls are deployed
+			v. Assess
+				1) Assess controls to verify they are working as intended
+			vi. Authorize
+				1) Operating system  with risk acceptance
+			vii. Monitor
+				1) Alert of changes 
+	VI. ISO
+		a. ISO 27001
+			i. Information Security Management systems
+				1) How to implement
+		b. ISO 27002
+			i. Information Security Management systems
+				1) Controls/code of practice
+		c. Iso 27701
+			i. Privacy information management
+			ii. How to process PII
+		d. ISO 31000
+			i. Risk Management
+				1) Guidelines
+	VII. SOC Type I/II
+		a. Type I
+			i. Provides a description of the controls provided by the audited organization and the auditor opinion based on the description, BUT does not involve actual testing of controls
+			ii. Sample one item per control category
+		b. Type II
+			i. Covers a minimum period of 6 months and requires testing of the controls and an opinion from the auditor as to the effectiveness based upon testing
+	VIII. Cloud security alliance cloud controls matrix (CSA CCM)
+		a. Framework for cloud computing aligned to CSA best practices
+		b. 197 control objectives in 17 domains covering all key aspects of cloud technology
+		c. It can as a tool for the systematic assessment of a cloud implementation and provides guidance on which security controls should be implemented by which actor within the cloud supply chain.
+	IX. Secure configuration guides
+		a. Platform/Vendor-specific guides
+		b. Web Sever
+		c. O/S
+		d. Application server
+		e. Network infrastructure devices
+
+Security Controls
+	I. Security controls
+		a. Definition
+			i. Safeguards or countermeasures to avoid , detect counteract, or minimize security risks 
+			ii. Protect the CIA
+				1) Confidentiality, integrity and availability 
+			iii. Systems of controls can be referred to as frameworks or standards 
+	II. Security controls - Categories (3)
+		a. Administrative 
+			i. Polices
+		b. Technical/logical
+			i. Software based
+				1) IE Bitlocker
+		c. Physical
+			i. Bollards, barricades, fencing
+		d. Categories are broad descriptive and grouping capability
+	III. Security controls - Types (7)
+		a. Preventative
+			i. Attempt to stop unwanted access
+			ii. Electric fence
+		b. Detective
+			i. Attempt to identify unauthorized access AFTER occurrence of unauthorized activity
+		c. Corrective
+			i. Modifies Environment to return to normal operation AFTER occurrence of unauthorized activity
+		d. Deterrent
+			i. Attempt to discourage security policy violations, Key deference between this and preventative is that preventative blocks access but deterrent requires choice
+			ii. Sign of a electric fence
+		e. Recovery
+			i. Attempt to repair or restore after a security violation
+			ii. Have more advanced capabilities  than corrective 
+		f. Directive
+			i. Attempt to specify actions to ensure compliance with security policy
+		g. Compensating
+			i. Attempt to provide an alternate control in absence of primary
+
+General Data Protection regulation
+	I. GDPR
+		a. Customer information/Personal Data (PII, PHI)
+			i. Any information relating to a person who can be identified, directly, or indirectly
+			ii. Examples:
+				1) Name
+				2) Identification number
+				3) Locatoin data
+				4) Online identified
+				5) Physical factors
+				6) Physiological factors
+			iii. Online identifiers
+				1) IP addresses
+				2) Cookies
+		b. Control and processors
+			i. Data Controller
+				1) Determines the purpose for which & the manner in which data is to be processed
+			ii. Data Processors
+				1) Manager of all; They process the data on behalf of the data controller
+			iii. The controller processor relationships must be documented and managed with contracts with mandate privacy obligation
+		c. Fines and Enforcement regime
+			i. Level one
+				1) Penalties equal to the greater of 10 million or 2% of the business global gross revenue
+			ii. Level two
+				1) Violations of related to legal justifications for processing (including consent), data subject rights, and cross-border data transfers may result in penalties of greater than 20 million or 4% of the global gross revenue 
+			iii. Per instance of violation
+		d. Data protection officer (DPO)
+			i. Mandatory for EU citizens' personal data
+			ii. Responsible for educating the company and its employees about compliance, training staff involved in data processing, and conducting regular security audits 
+			iii. Also serve as the point of contact between the company and any supervisory authorities that oversee activities related to data
+			iv. Must be appointed for all public authorities
+			v. DPO can be internal or external
+		e. Privacy management
+			i. Risk based approach
+			ii. Impact assessments
+			iii. Data protection safeguards
+				1) Privacy by design
+		f. Consent
+			i. Consent should be demonstrable
+			ii. Consent must be freely given
+			iii. Withdrawing consent should always be possible 
+		g. Breach and notification
+			i. Personal data breach the Data Controller must notify the appropriate supervisory authority without undue delay and where feasible, not later than 72 hours of becoming aware of it without reasoned justification
+		h. Data subject access request (DSAR)
+			i. Shows how your user information is being processing, used, and under what conditions
+			ii. Normally a process such as a form
+			iii. Must be done within one month of receipt of the request
+		i. Right to be Forgotten
+			i. Opot out
+			ii. Reach out to Data controller and request data removal
+				1) Must certify data has been erased
+			iii. Data controller must notify data controller to remove data from data and backups
+
+Organizational Security Policies -Personnel 
+	I. Terms
+		a. Job rotation
+			i. Allows for cross training
+			ii. Forces us to update documentation 
+		b. Mandatory vacation 
+			i. Allows for the company to see the role of the person taking a vacation
+			ii. Also shows any mal
+		c. Separation of duties
+			i. To have defined job descriptions that can be monitored and audited 
+		d. Least Privilege
+			i. Only have access or rights as needed
+				1) If they have more access then needed it could be used maliciously
+		e. Acceptable use policy
+			i. Rules to follow when using 
+			ii. Do care
+	II. Terms II
+		a. Background checks
+			i. Trust but verify
+		b. Non-disclosure agreement (NDA)
+			i. Make sure they don't take data or knowledge elsewhere 
+		c. Social Media Analysis
+			
+		d. Onboarding
+			i. Documented processes 
+		e. Offboarding
+			i. Documentation on leaving
+	III. Terms III
+		a. User Training
+		b. Clean desk space
+		c. Gamification
+		d. Capture the flag
+		e. Phishing campaigns/simulations
+		f. Computer-based training (CBT)
+		g. Role-based training 
+
+3rd Party Risk
+	I. Third party/Supply chain risks
+		a. Counterfeits
+		b. Unauthorized production
+		c. Tampering
+		d. Theft
+		e. Insertion of malicious software or hardware
+		f. Poor manufacturing
+		g. Poor development practices
+	II. Terms key components
+		a. Vendors Business partners
+		b. Supply chain
+		c. Non-disclosure agreement
+			i. Binds third party legally
+		d. MSA - Measurement systems analysis
+			i. Method of determining how much the variation within the measurement process contributes to overall process variability
+			ii. Five Parameters
+				1) Bias
+				2) Linearity
+				3) Stability
+				4) Repeatability
+				5) Reproducibility
+		e. End of life (EOL)
+			i. A product is at the end of its useful life from vendor's point of view 
+		f. End of service (EOS)
+			i. No maintenance services or updates after a certain date; the final phase of the equipment's lifecycle.
+	III. Risk management
+		a. PPRR risk management model
+			i. Prevention
+				1) Take precautionary measures 
+			ii. Preparedness
+				1) Develop and implement a contingency plan
+			iii. Response
+				1) Execute on your contingency plan
+			iv. Recovery
+				1) Resume operations and get thing running at normal capacity
+
+Data
+	I. What is Data Classifications
+		a. Marked to set clearance
+		b. Owner decided data classification
+			i. Should be reviewed annually at a minimum
+	II. What is Governance 
+		a. The system by which an organization directs and control IT security
+		b. Governance  is about who can make decisions and is authorized 
+		c. Provide direction and control
+	III. Data Governance
+		a. Policies and Procedures for data
+			i. Handling
+			ii. Storing
+			iii. Manipulating
+			iv. Accessing
+			v. Deleting
+		b. Responsibilities
+			i. Establishing infrastructure and technology
+			ii. Setting up and maintaining the process and polices
+			iii. Identifying the individuals authorization 
+			iv. Safeguarding specific data 
+	IV. Data Retention
+		a. Organization data retention policies 
+			i. How it saves data for compliance or regulatory reason
+			ii. Should clarify how records and data should be formatted, how long they must be kept, and what storage system or devices are used to retain them
+			iii. Rules are set by governing bodies of that industry
+				1) Saving for too little is a violation
+				2) Saving for too long is a violation or could be 
+		
+			
+
+Other Polices
+	I. Credential Policy
+		a. Personnel
+		b. Third-party
+		c. Devices
+		d. Service accounts
+		e. Administrator/root accounts
+	II. Change Management
+		a. Set of process in place from initiation of a request for change
+		b.  analyzing impact of the change
+		c. Approving/rejecting the request for change
+		d. Implementing the change
+		e. Evaluating the result of the change
+	III. Change Control
+		a. Formal process used to ensure changes
+		b. Product or system introduced in a controlled and coordinated manner
+		c. Like maintaining release versions, documentation, using a versions control system etc
+	IV. Asset management
+		a. Inventory vs. Configuration
+		b. Configuration management database (CMDB)
+		c. Equipment lifecycle
+			i. Define requirements
+			ii. Acquire & Implement
+			iii. Operations & Maintenances
+			iv. Disposal & Decommission
+
+Risk management
+	I. Vocabulary 
+		a. Must Know concepts
+			i. Risk 
+				1) the probability that a given threat source will exercise a particular vulnerability and the resulting impacts should occur
+			ii. Threat
+				1) An event or situation that if it occurred would prevent the organization from operating in its normal manner
+			iii. Vulnerability
+				1) Weaknesses
+			iv. Likelihood
+				1) Chance something might happen
+			v. Impact
+				1) What a threat will cost
+					a) How it's measured
+			vi. Countermeasure (control)
+				1) Mechanism applied to minimize
+			vii. Residual Risk
+				1) Remaining risks after all a countermeasures/controls have been applied 
+	II. Risk Assessment Process
+		a. Prepare for Assessment
+			i. Prepare and plan
+			ii. Who, what, when, and where
+			iii. Scope of what will be covered and what will not
+			iv. Tailor assessment to fit what we need
+		b. Conduct Assessment
+			i. Identify threat sources & events
+			ii. Identify Vulnerabilities & Predisposing conditions
+			iii. Determine likelihood of occurrence
+			iv. Determine Magnitude of impact
+			v. Determine Risk
+		c. Communicate results
+			i. Audience relevant communication 
+		d. Maintain Assessments
+	III. Risk Types
+		a. External
+			i. Bad Actors
+		b. Internal
+			i. Insiders
+		c. Legacy Systems
+		d. Multiparty
+		e. IP theft
+		f. Software Compliance/licensing 
+	IV. Risk Management strategies
+		a. Accept
+			i. Accept the risk
+		b. Avoid
+			i. Avoid the risk
+		c. Transfer
+			i. Cyber Insurance is an example of transfer
+			ii. Moving to the cloud is also a transfer
+		d. Mitigate
+1. Risk analysis
+	I. Terms
+		a. Risk Register
+			i. Formal risk that are listed and are managed
+		b. Risk Matrix - Heat map
+			i. Measure risk
+				1) Likelihood
+				2) Impact / severity
+		c. Risk Control assessment / Self-Assessment
+			i. Audit risk controls
+			ii. How important and appropriate they are
+		d. Risk Awareness
+			i. Security awareness
+			ii. Training awareness
+		e. Risk Appetite
+			i. Measure of risk tolerance
+				1) To accept risk
+		f. Inherent Risk
+			i. Risk in something we are doing
+		g. Residual Risk
+			i. Risk left over after risk control
+	II. Risk analysis (Risk Assessment is first)
+		a. Quantitative Risk Assessment -FORMULA
+			i. Measure tangibles | Numerical assessment
+			ii. Annualized Loss Expectancy (ALE) = Single Loss Expectancy (SLE) * Annual Rate of Occurrence (ARO)
+				1)  how much money does it cost us per occurrence over a period of time
+			iii. SLE = Asset Value (AV) * Exposure factor (EF)
+				1) Asset value
+					a)  amount asset is worth to the organization
+				2) Exposure factor 
+					a) % of loss experienced if a specific asset were attacked
+				3) Example ALE = SLE*ARO
+					a) ALE =__
+					b) SLE = $10.00 (100.00*10%)
+					c) ARO= 10 
+				4) If countermeasure is Less than ALE then Implement the countermeasure
+				5) If countermeasure is equal to ALE then implement the countermeasure due to qualitative risk
+				6) If countermeasure is greater than ALE then think before acting 
+		b. Qualitative risk assessment
+			i. The intangible cost 
+			ii. The likelihood and impact produces the level of risk
+			iii. The higher the risk level, the more immediate the need for to address the issue (risk matrix)
+2. Business impact Analysis
+	I. (BCDR) Business Continuity & Disaster Recovery 
+		a. Business Continuity (BC)
+			i. Process and Procedures used to make sure that regular business operations continue during a disaster
+			ii. Maintain close to business operation as possible 
+		b. Business Continuity Planning (BCP)
+			i. Ensure that all areas will be able to maintain essential operations or able to resume them as quickly as possible in the event of a crisis or emergency
+			ii. With little downtime
+		c. Disaster Recovery (DR)
+			i. Designed to prevent or minimize data loss and disruption resulting from catastrophic events 
+			ii. Level of event is a disaster; is more impactful then a BC event
+			iii. Unable to continue business most of the time
+		d. Disaster Recovery Planning (DRP)
+			i. The subset of BCP that focuses on recovering IT infrastructure and systems
+				1) Focusing on restoring systems that are not online or operating 
+	II. Business impact analysis (BIA)
+		a. Correlate the system with the critical mission/business process and service provided, and based on that information, characterize the consequences of a disruption 
+			i. Look at all infrastructure and label it
+				1)  must haves 
+					a) Critical to allow the business to operate 
+				2)  nice to haves
+					a) Infrastructure that is useful but not critical
+		b. Goals of BIA
+			i. Determine criticality
+			ii. Estimate Maximum Downtime
+			iii. Evaluate Internal / External Resource Requirements
+		c. BIA process
+			i. Step 1 - Gather Requirements/information
+			ii. Step 2  - Vulnerability assessment
+			iii. Step 3 - Risk Analysis 
+				1) Quantitative ALE= SLE *ARO
+				2) Qualitative ALE = (AV*EF)*ARO
+			iv. Step 4 - Communicate Results 
+		d. Determine Downtime
+			i. Maximum Allowable Downtime (MAD) / Maximum Tolerable Downtime (MTD)
+				1) Recovery Time Objective (RTO) + (WRT) Work Recovery Time  is MAD / MTD
+			ii. Recovery Time Objective (RTO)
+				1) Time between Disaster to recovery
+					a) Restores just the hardware and critical applications
+			iii. Work Recovery Time (WRT)
+				1) Time between Recovery to Recovery complete, back to normal business
+				2) All applications are back to normal including backups
+			iv. Recovery Point Objective (RPO)
+				1) Time between normal to Disaster
+				2) The data that can be restored and that can be lost with backups
+					a) If you have a backup ever 15 minutes and get a failure at 14 minutes that data may be lost
+			v. 
+				1) Timeline of downtime
+		e. Odds and ends
+			i. Mean time to repair (MTTR)
+				1) Time to repair system
+			ii. Mean time between failures (MTBF)
+				1)  life span of system
+			iii. Single point of failure (SPOF)
+				1) Bottleneck
+				2) If one is good then two is better
+			iv. Mission essential Functions (MEF)
+				1) Core that must be maintained 
+				2) Restored as rapidly as possible
+3. Breaches and data types
+	I. Breaches
+		a. Impact
+			i. Reputation damage
+			ii. Identity theft
+			iii. Fines
+			iv. IP Theft
+		b. Requirements of notifications of breaches
+			i. Secure your operations
+			ii. Fix Vulnerabilities
+			iii. Notify Appropriate Parties
+				1) Determine your legal requirements
+				2) Notify Law enforcements
+				3) Notify Affected Business
+				4) Notify Individuals
+		c. GDPR breach
+			i. Any personal data that can be used to identify them directly or indirectly
+				1) IP, SSN, date of birth, Records, and more
+			ii. This includes accidental or unlawful unauthorized access to personal data
+	II. Data Types
+		a. Categories
+			i. Personal Identifiable information (PII)
+			ii. Protected health information (PHI)
+			iii. Financial information
+			iv. Government data
+			v. Customer data
+		b. Classification
+			i. Government/Military
+				1) Top secret
+					a) Unauthorized disclosure can be expected to cause exceptionally grievous damage
+				2) Secret
+					a) Unauthorized disclosure can be expected to cause significate damage
+				3) Confidential
+					a) Encompasses sensitive, private, proprietary 
+				4) Unclassified
+			ii. Private Sector
+				1) Confidential
+					a) Reserved for extremely sensitive data and internal data
+				2) Private
+				3) Sensitive
+				4) Public 
+4. Privacy Enhancing Tech 
+	I. Technologies
+		a. Data Minimization
+			i. Limiting data collection to only what is required to fulfill a specific purpose
+				1) Smaller data amount is easier to protect
+			ii. Processing should use the least amount of data necessary
+			iii. Data collected should not be used for any other purpose or process without consent from the data subject
+		b. Data Masking
+			i. Protect sensitive data while providing functional alternative when real data is not needed
+				1) Example User training, sales demos, or software testing
+			ii. Change the values of the data while using the same format
+			iii. Goal is to create a version that cannot be deciphered or reversed engineered
+		c. Data masking types
+			i. Static data masking
+				1) Sanitized copy of the database by altering all sensitive data until a copy of the database can be safely shared
+			ii. Deterministic data masking
+				1) Mapping two sites of data that have the same type of data, in such a way that one value is always replaced by another value
+			iii. On-the-fly data masking
+				1) Masking data while it is transferred from production systems to test or development systems the data is saved 
+			iv. Dynamic data masking
+				1) Data is streamed directly from the production system and consumed by another system in the dev/test enviroment
+				2) On-the-Fly data masking but without saving it
+		d. Data masking Techniques 
+			i. Data encryption
+				1) Need Decryption key
+			ii. Data scrambling
+				1) Characters are reorganized in a random order
+			iii. Nulling out
+				1) Missing or Null when viewed but unauthorized users
+			iv. Value variance
+				1) Data values are replaced by a function
+			v. Data substitution
+				1) Fak but realistic alternative values
+			vi. Data shuffling
+				1) Values are switched within the same dataset
+			vii. Pseudonymization
+				1) Ensure data cannot be used for personal identification 
+		e. Tokenization
+			i. Replaced sensitive data element with a non-sensitive substitute, known as a token
+				1) The token is a randomized data string that has no essential or exploitable value or meaning
+				2) Is a unique identifier which retains all the pertinent information about the data without compromising it's security
+				3) Links the original data to a token but does not provide any way to decipher the toke and reveal the original data
+				4) In contrast to encryption systems, which allow data to be deciphered using a secret key
+		f. Pseudonymization vs Anonymization
+			i. Pseudonymization
+				1) Replaced PII with artificial identifiers or pseudonyms which may be recalled at a later date
+			ii. Anonymization
+				1) Pseudonymization that is not reversable it is Permanent 
+5. Privacy data sensitivity, roles, responsibilities
+	I. Roles and Responsibilities
+		a. Data subject
+			i. An individual who is the subject of personal data
+		b. Data Owner
+			i. "Master of All"
+			ii. Responsible for classification of data
+			iii. Hold legal rights
+			iv. Complete control over the data they create or is created by others on their behalf
+			v. Additionally 
+				1) Determine data's impact
+					a) If data can be replaced
+				2) Determine who has need for the data under what circumstances
+				3) Identify when data is inaccurate or no longer needed and should be destroyed
+		c. Data Controller
+			i. Determines the purpose for which & the manner in which data is to be processed
+			ii. Voice for data owner
+		d. Data Processor
+			i. Managers of all
+			ii. They process the data on behalf of the data controller
+			iii. Responsibilities
+				1) Adherence to appropriate and relevant data policy and data ownership guidelines
+				2) Ensure accessibility to appropriate users, maintaining appropriate levels of data set security
+				3) Data maintained & Documentation
+				4) Assurance of quality and validation of any addition to a dataset
+		e. Data Custodians
+			i. Responsible for the safe custody, Transport, Storage of the data & implementation of business rules
+			ii. Responsible
+				1) Access to the data is authorized and controlled
+					a) Data stewards are identified for each data set
+					b) Technical processes sustain data integrity
+					c) Processes exist for data quality issues resolution in partnership with data stewards
+		f. Data Stewards
+			i. Responsible for utilizing an org. data governance process to ensure fitness of data elements - both the content and metadata
+			ii. Focus on process polices, guidelines & responsibilities for administering org.'s entire data in compliance with policy
+			iii. Responsible
+				1) Technical controls to safeguard data
+				2) Change management practices are applied in maintenance of the database/dataset
+				3) Data content & changes can be audited 
+		g. Data protection officer
+			i. Mandatory role for the all companies that collect or process EU citizen's personal data, under article 37 of GDPR
+			ii. Responsible for educating the company and its employees about compliance, training staff involved in data processing, and conducting regular security audits 
+			iii. Also serve as the point of contact between the company and any Supervisory Authorities that oversee activities related to data
+6. Other Areas
+	I. Information life cycle
+		a. Create
+		b. Store
+		c. Use
+		d. Share
+		e. Archive
+		f. Destroy 
+	II. Privacy impact assessment (PIA)
+		a. How PII is collected, used, Shared, and Maintained
+		b. The purpose of Privacy impact assessment (PIA) is to demonstrate that managers and system owners have consciously incorporated privacy protections thought out the development cycle of a system/program
+	III. Terms of Agreement (also called Terms of service or Terms of Use)
+		a. Tells customer what will be legally required of them if they subscribe to your service or download and use your mobile app 
+	IV. Privacy notice
+		a. Policy is internally focused
+		b. Telling employees what they may or may not do with personal information 
+		c. While privacy notice is externally facing telling customers, regulators, and other stake holders on what the org. does with personal information
