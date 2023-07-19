@@ -1,0 +1,433 @@
+Cryptography Concepts
+Cryptography
+	The science of keeping information secret 
+Security concepts
+	CIA Triad
+		Confidentiality
+			Only authorized users have access
+			Encryption
+		Integrity
+			Hashing
+			Data has not been altered
+		Availability
+			Authorized users have access
+			Redundancy
+			Fault-tolerance
+	Non-repudiation
+		Digital signature
+		Verifies who sent data or who's data it was
+	Lightweight Cryptography
+		Used for lower power devices
+		Constrained devices
+			Low processing power
+		Ciphers
+			PRESENT
+TWINE
+	Quantum
+		Communications and computing
+		Currently theoretical
+		Encryption concerns
+		Post -Quantum
+			Resilient to quantum computing
+	Block Chain
+		Distributed
+		Decentralized
+		Public Ledger
+			Record keeping
+		Block - Transaction information in blocks
+			Can be publicly verified
+			Hash is applied after verified
+			Each block is added to create a chain
+			Every transaction can be verified by checking with each block. If one is off then it won't verify. 
+Encryption & Steganography
+Encryption
+		Confidentiality
+		Does not hide the data; it's still there but may be unknown
+	Cypher-stream
+		Plaintext to ciphertext one byte at a time
+		Easier to reverse
+		Faster
+	Cypher-block
+		Plaintext to cyphertext in blocks (64 or higher)
+		Harder to revers
+		Slower
+	Modes of Operation
+		Electronic code Book - weakest block cypher
+		Cipher block chaining - Errors affect whole chain
+		Cipher Feedback (CFB) - works like a stream cipher
+		Output Feedback (OFB - works like a stream cipher
+		Counter Mode (CTR) -  Strongest
+	
+Steganography
+	 Hide it in plain sight but putting a layer of bytes over the information 
+
+Hashing
+	Used to verify integrity of data
+	Variable length data > Fix length data
+		Finger print
+		Integrity
+	One way encryption 
+		Can’t be reversed engineer from fix length data
+Hashing Process
+	Message >hash algorithm > fixed length / string of information
+	Recipient > Fixed length value > Hash algorithm > message
+	Hashing algorithm will always result in the same amount but not the same characters
+	Examples
+		1. Message digest 5 -MD5 
+			i. 128-nit
+			ii.  weakest
+			iii.  Prone to collisions
+				1) Hashing collisions - feed input > fixed length . Different input > same Fixed length
+		2. SHA-1 (Secure hashing algorithm -1)
+			i. Successor to MDS
+			ii. 160-bit
+			iii. Collision attacks
+		3. SHA-2 (Secure Hashing algorithm -2) 
+			i. Successor
+			ii. 224,256,384,512 bits
+			iii. Strongest
+		4. RIPEMD
+			i. Designated replacement for MDs
+			ii. 128,160,256,320-bits variants
+		5. HMAC (Hashed messaged authenticate code)
+			i. Data integrity and authenticity
+			ii. Keyed hashing function; Only recipient should have key
+			iii. Used with md5, sha-1, & sha-1
+			iv. Gets data authenticity
+	1. Hash Use case Examples
+		1. File integrity
+		2. Code signing 
+			i. Drivers
+		3. Passwords
+Salting
+	Is like a wireless initialization vector
+	Adding unique data while it is hashed to make the hash more encrypted
+
+Secure Protocols
+	I. TLS Handshake
+		a. Client connecting to server
+			i. Checks TLS version
+				1) Should be 1.3
+			ii. Which cipher suites support
+			iii. Random value
+		b. Server response:
+			i. Random
+			ii. chosen cipher suit 
+			iii. certification
+		c. Client verifies certification 
+		d. Client gets Server's public key 
+			i. Secret is encrypted with server public key
+				1) Send secret to server
+
+				
+	II. Secure shell (SSH)
+		a. RSA encryption key
+		b. Creates tunnel environment between two nodes
+			i. To prevent eavesdropping 
+		c. Normally used Remote connection 
+		d. Port 22
+	III. LDAPS (LDAP over SSL)
+		a. TLS 1.3 should be used instead of SSL
+		b. Creates an environment to prevent eavesdropping
+		c. Port 636 LDAPS
+		d. Port 38 LDAP
+	IV. SFTP
+		a. FTP Client starts SSH session to FTP Server
+			i. Port 22 (SSH)
+			ii. Encrypted tunnel 
+	V. FTPS
+		a. FTP with SSL but no longer used
+	VI. HTTPS (SSL)
+		a. SSL is vulnerable attacks
+			i. HTTPS was vulnerable 
+			ii. HTTP 3.1 is TLS 1.0; not vulnerable
+				1) Secure Web communication 
+			iii. Port 443
+	VII. SRTP 
+		a. To secure VOIP 
+	VIII. Email 
+		a. S/MIME
+			i. Digitally sign and encrypt emails
+			ii. Use public key cryptography
+		b. POP3S
+			i. Secure inbound email
+			ii. SSL port 465
+			iii. TLS port 587
+		c. IMAPS
+			i. Secure outbound email
+			ii. Port 993
+	IX. DNSSEC
+		a. Uses a digital signature to verify DNS
+	X. SNMP
+		a. Simple network management protocol
+		b. Collects information on managed devices
+		c. Network monitoring and configurations
+		d. Components
+			i. Managed devices
+			ii. Agent
+			iii. Management station
+		e. Poor security
+		f. Community string (ID or password)
+	XI. SNMP V2
+		a. Poor security
+		b. Community string (ID or password)
+	XII. SNMP V3
+		a. Enhanced security
+		b. Adds encryption
+		c. Adds authentication
+
+Symmetric vs. Asymmetric 
+	I. Symmetric Encryption
+		a. Key 1 > Plain text > Cipher text
+		b. Key 1  > Cipher text > Plain Text
+			i. One key to encrypt or decrypt 
+		c. Considerations
+			i. Faster than Asymmetric
+			ii. Pre-shared key
+			iii. Key Exchanged
+				1) If attacker gets key they get the encrypted data
+		d. Types
+			i. AES - Advance Encryption Standard
+				1) Strongest
+				2) Block Cipher
+				3) 128-bit, 192-bit, 256-bit variants
+			ii. Data encryption standard - DES & 3DES
+				1) Weak
+				2) Block Cipher
+				3) 56 Bits (DES)
+				4) 112 (2 Keys)
+				5) 168 Bits (3DES)
+			iii. Blowfish
+				1) Block Cipher
+				2) Weak
+				3) 64 bit
+			iv. Rivest Cipher - RC*
+				1) RC4- Stream cipher
+				2) RC5/RC6 - Block cipher
+	II. Asymmetric
+		a. Slower than symmetric 
+		b. Key Pair
+			i. Key 1 - public and Key 2 - private
+				1) Generated at the same time
+			ii. Public key encrypts and decrypts info only for private key
+			iii. Private key Decrypts and encrypts only for public key
+				1) Encryption process fails if  access to private key is taken
+				2) No Asymmetric keys are transferable
+					a) The key won't work on a new encryption, it has to be those keys
+		c. Process
+			i. User 1 Send public key to user 2
+			ii. User 2 uses public key to send encrypted message to User 1
+			iii. User 1 decrypt message with private key
+		d. Types
+			i. RSA (Rivest, Shamir, Adleman)
+				1) One of the oldest one
+			ii. Diffie-Hellman
+				1) Old standard 
+				2) Many variants
+			iii. DSA - Digital Signature algorithm
+				1) Endorsed by NSIT for their digital signature standard
+			iv. EIGamal
+				1) Used in GNU Privacy guard
+				2) Pretty good Privacy 
+	III. Digital signatures
+		a. Hash value 
+			i. Encrypts with private key
+				1) Sent to person with public key
+					a) Only able to decrypt if matching keys
+	IV. Cipher suite
+
+
+
+PKI Concepts  (public key information) 
+	I. Installing ADCS (Root CA)
+		a. Highest level
+		b. Enterprise is for AD vs standalone without AD
+		c. CSPs
+		d. Key Length 
+			i. Longer is stronger with more resources used, smaller flipped
+		e. Hashing algorithm
+		f. Common name 
+			i. Part of the DN
+		g. Validate period
+			i. Roots longer
+			ii. Subs shorter
+	
+		
+
+Certificates
+	I. Root and sub CA certificates
+		a. Root CA 
+			i. self-signed cert
+		b. Intermediate/Sub CA
+			i. Cert from Root
+	II. Machine Certificates
+		a. Servers
+			i. Web servers
+				1) HTTPS
+			ii. Remote access
+			iii. Proxy servers
+		b. Client machines
+		c. Network devices
+	III. User Certificates
+		a. Email
+			i. S/MIME
+				1) Asymmetric/Public key cryptography
+				2)  
+		b. Disk encryption
+		c. Identity
+	IV. Code Signing certificate
+		a. Prove identity of vendor
+		b. Ensure integrity of software
+		c. Operating  systems use to validate
+	V. Wildcard Certificate
+		a. Use to identify a parent domain
+		b. Verifies all sub domains
+		c. Resented by an asterisk *
+			i. *itpro.tv
+			ii. *google.com
+	VI. Validation Certificate
+		a. Domain Validation (DV)
+			i. Lowest level of validation
+			ii. Verifies ownership over domain
+		b. Organization Validation (OV)
+			i. Greater validation than DV
+			ii. Verifies the identity of organization
+		c. Extended validation (EV)
+			i. Highest form of organization identification
+			ii. Most rigorous validation process
+	VII. Certificate formats
+		a. .der - Distinguished Encoding rules
+			i. Binary Code
+				1) Harder to read
+			ii. Does not include private key (.cer)
+		b. PEM - Privacy enchanced mail
+			i. Base64 ASCII encoded
+				1) Human readable
+			ii. Various extensions 
+				1) .pem
+				2) .cer
+				3) .crt
+		c. Public Key Cryptography standards #7
+			i. Includes public key
+			ii. certificate information
+			iii. certificate chain
+		d. Public Key Cryptography standards #12
+			i. Includes both private/public keys
+			ii. Certificate information
+			iii. Certificate chain
+			iv. Allows you to move new hardware if needed
+	VIII. OCSP - Online Certificate status protocol
+		a. Real time
+		b. Online revocation
+		
+
+Keys
+	I. Algorithms
+		a. Mathematical procedure
+		b. Defines how to encrypt information
+		c. Publicly known
+	II. Keys
+		a. Generated by the algorithm
+		b. Used to encrypt and decrypt
+		c. Makes encryption unique
+	III. Key Length
+		a. Longer
+			i. Harder to break
+			ii. Uses more resources
+		b. Shorter
+			i. Easier to break
+			ii. Less resources
+		c. Bits
+			i. 128
+			ii. 256
+			iii. 512
+			iv. 1024
+			v. 2048
+			vi. 4096
+	IV. Key Exchange
+		a. Securely transmit key
+		b. Endpoint negotiate type
+		c. Types
+			i. PSK - Pre-shared key
+			ii. RSA
+			iii. Diffie-Hellman
+	V. Key stretching
+		a. Key strengthening
+		b. Increase password hash size
+		c. Inserts random character
+		d. Increase resiliency to brute force
+		e. Types
+			i. BCRYPT
+				1) Blowfish Cypher
+			ii. PBKDF2
+	VI. Diffie-Hellman
+		a. Invented in the 70s
+		b. Secure generate a master key
+		c. Resilient to Man in the middles
+		d. Variants
+			i. DHE
+			ii. ECDHE
+				1) Reduce size but still just as encrypt
+	VII. Key Management
+		a. Managing cryptographic keys
+		b. Activates
+			i. Generation
+			ii. Exchange
+			iii. Usage
+			iv. Storage
+			v. Renewal
+			vi. Archival
+			vii. Recovery
+			viii. Destruction
+				1) Crypto shredding
+	
+
+IPSEC
+I. Internet protocol security 
+        1. Group of protocols to secure data over public data
+II. IPSEC implementations
+        1. VPN - Virtual private networks
+        2. Bran office connectivity
+        3. Partner Extranet
+        4. Remote Access
+III. Components -SA
+        1. Security Associations
+                a. Trust relations between IPsec Peers
+                b. IP Sec peers are nodes
+IV. Components - Phase 1 SA / IKE Phase 1
+        1. Security Associations / Internet key exchange
+                a. Version 2 is better
+        2. Main Mode
+        3. Traffic Management
+                a. Negotiation 
+                b. Key Exchange method
+                        i. Diffie-Hellman
+                c. Authentication
+                d. Encryption
+                e. Session  Duration
+V. Phase 2 SA / IKE phase 2
+        1. Quick mode
+        2. Data exchange
+        3. Two one way tunnels
+                a. Negotiation
+                b. IP Sec Protocol
+                c. Encapsulation method
+                d. Authentication
+                        i. MD-5 or SHA
+                e. Session Duration
+                f. Optional Diffie-Hellman exchange
+VI. IPSec Protocols - AH
+        a. Authentication
+        b. Integrity 
+        c. TCP/IP Protocol 51
+VII. IPSec Protocols -ESP
+        a. Encapsulation security payload
+                i. Authentication
+                ii. Integrity
+                iii. Encryption
+        b. TCP/IP Protocol 50
+VIII. Ipsec Encapsulation
+        a. Transport mode
+                i. Clients and server
+
+        
