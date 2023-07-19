@@ -1,0 +1,500 @@
+				Malware
+	I. Malware
+		a. Malicious code that is not wanted
+		b. Types of malware:
+			i. Virus
+				1) Attaches to host app or service
+				2) Needs avenue, a method to get onto system
+				3) Activated by the Host
+				4) Virus Types:
+					a) Macros
+						i) Mini applications apart of a larger application
+						ii) Example: Adobe PDF or excel
+					b) Boot-Sector
+						i) Firmware infection
+					c) Attachment
+						i) Email attachments
+					d) File infector
+						i) Changes already exe code 
+					e) Polymorphic
+						i) Changes to avoid antivirus and signature to avoid detection
+					f) Network
+			ii. Worm
+				1) Self-sufficient
+				2) Self-replication
+					a) Doesn't need host interaction
+				3)  Resource consumption 
+			iii. Fileless
+				1) Stealthy
+				2) Runs in memory (RAM)
+			iv. Rootkits
+				1) Privileged access
+				2) System admin rights
+				3) Difficult to detect
+				4) Low-level access
+			v. Keyloggers
+				1) Byproduct of malware
+				2) Capture keyboard input
+				3) Can be physical attack
+			vi. Backdoors
+				1) Like a trojan
+				2) Software base
+				3)  malware
+				4) applications,
+			vii. Logic bomb
+				1) Sits dormant
+				2) Utilizes event trigger:
+					a) Date/time
+					b) Action/inaction
+						i) Condition must be met to activate
+			viii. Ransomware
+				1) Encrypts files for ransom
+			ix. Bot
+				1) collection of exploited devices
+				2) Command and control/C2 environment 
+					a) Connects to a server to get orders
+				3) Used to create Botnets; a group of bot's waiting for commands from a bot commander/server
+					a) Command and control server is also called  C2 or C&C server
+			x. Trojan
+				1) Looks benign
+				2) Paves the way
+				3) RAT
+					a) Remote Access Trojan
+			xi. PuPs
+				1) Potentially Unwanted software
+				2) Included normally in installer bundle
+
+Password Attacks
+	I. Password Attacks
+		a. Used against auth systems
+		b. Automates the process
+		c. TYPES:
+			i. Brute Force Attack
+				1) Tries every possible combination  
+				2) Can take a long time
+			ii. Dictionary attack
+				1) Brute force type of attack
+				2) Uses large dictionary list
+			iii. Rainbow Tables
+				1) Use precomputed chains
+				2) Chains are stored in tables
+				3) Tables can be very large files
+				4) Time reduction
+			iv. Spraying
+				1) Single password against multiple accounts
+				2) Avoids lockout normally 
+		d. Online attacks
+			i. Against remote logon interface
+			ii. Remote login interface (ssh, rdp)
+			iii. Limited attempts
+			iv. Bandwidth limits
+		e. Offline attacks:
+			i. Attacking password directly
+			ii. Obtain Password hash
+			iii. Limited by processing power
+			iv. Harder to detect
+	II. Password Tools:
+		a. John the Ripper
+		b. Hashcat
+		c. Hydra
+		d. PACK
+		e. CeWL
+		f. Statsprocessor
+		g. Burp Suite
+
+			Cross Site attacks
+	I. Cross site scripting (XSS)
+		a. Injects malicious script to execute script in web browser.
+		b. Types
+			i. reflected XSS
+				1) link with Malicious script embedded emailed to someone.
+			ii. Stored XSS
+				1) Insert script into comment section
+				2) Stored on a serve
+			iii. DOM-based XSS
+				1) Document object model
+				2) Process untrusted data
+				3) Writes to DOM
+				4) Client-side attack
+	II. Cross site request forgery (XSRF)
+		a. Abuses trust relationship between a user and authentication session (logged in) 
+		b. Examples: Logged into a bank. Someone sends you a link to the bank, after pressing the link it transfers funds from your account by running a script. 
+		c. Client side
+		d. Server side
+			i. HTTP request > Web App > Sent to server > Vulnerable web server > backend server 
+			ii. Attacking the backend server itself by acting like the web server
+
+						Resource attack
+	I. Resource Attack
+		a. Resources Exhaustion
+		b. Memory Leaks 
+		c. application is online but keeps using recourse when it shouldn't 
+	II. Drive manipulations
+		a. Sophisticated attack
+		b. Modification of drive functionality
+		c. Drives take programming language and translate it to language/code the hardware can read then executes. Very privilege action so Hackers may exploit this to get privilege access. Windows Kernel and Linux kernel has privilege access to the hardware which is where the hacker want to access.
+		d. Drives will act like a camouflage if compromised for malicious purposes 
+		e. Types:
+			i. Shimming
+				1) Creates small libraries that access 
+				2) Legacy API support
+				3) Allows new systems to talk to old systems to exploit it
+				4)  A shim is a small library that is created to intercept API calls transparently and do one of three things: handle the operation itself, change the arguments passed, or redirect the request elsewhere
+			ii. Refactoring
+				1) modifying internal code for malicious purpose
+				2) behavior might not change; the drive is still doing its original function 
+				3) example of legitimate reason is for design improvement 
+				4) leads to privileged escalation attacks
+		f. Race conditions 
+			i. Application does process 1 and inputs it into process 2. 
+			ii. In race conditions process 2 runs before process 1  runs but fails OR Process 2 and Process 1 run at the same time and gets a failure. 
+			iii. Example
+				1)  You have two bank accounts that can't go negative. When transferring money between the accounts you press the transfer button a few times quickly and one account goes negative. This is a race condition. 
+			iv. TOC/TU - Time of check / Time of use
+				1) File sharing
+				2) Example: I check a file at 8:30.
+				3) Another person is checking at 8:35 and modifies the files while it is open on my machine can cause corruption in that file. 
+		g. Pointer/object
+			i. common in some programming languages
+			ii. Pointer to locate memory address and data
+			iii. Dereference data then attackers can input their information to gain access to memory
+			iv. Code execution or denial of service
+		h. integers overflow 
+			i. Example is 2 binary numbers(155+101) equal 256 =1000000 in decimal =  9  bits You send the 9 bits to a 8 bit location > What happens to the extra bit? Potentially overflowing memory for an attacker to get access to memory then can execute code. 
+
+Application attacks
+
+Injection Attacks:
+Supplying untrusted input 
+
+Types:
+-SQL
+
+Threat actors will enter SQL commands to extract data or do undesirable action
+Admin' or 1=1#
+
+-LDAP
+
+Injects LDAP commands
+LDAP is a phone book of info for that domain, has emails, names, departments, machines on network
+Used in Active directory or web applications
+
+-XML
+
+\etc\password in linux will show all users on that environment
+
+-DLL - Dynamic link library
+
+Drivers are DLL
+Get system access / root access
+
+-Command Injection
+
+Application reaches into operating system
+Chain commands to run those commands
+127.0.0.0.1; cat /etc/password
+
+*Task Manager = TOP in Linux
+
+	I. Replay attacks
+		a. Retransmission of data
+		b. Repetitive actions that attackers can take advantage of
+		c. Example: Login server verifies it is you but an attacker takes that verification to use for themselves.
+		d. Types:
+			i. Pass the Hash
+				1) Get locals Hash off a workstation 
+				2) Use Hash against Login Server to get logged in
+ 
+
+OSI model
+1. Application
+	a. Access to network resources
+2. Presentation
+	a. Formatting to standard format for network
+3. Session
+	a. Opening, closing, and maintaining communication
+4. Transport
+	a. Sequence, segmentation, host to host communication
+5. Network
+	a. (IP) Addressing and routing
+6. Data Link
+	a. LAN communications, forwarding media access
+7. Physical
+	a.  electrical communications, media 
+	
+
+	
+
+ARP
+		Layer 3 is where IP address are
+		Layer 2 is MAC address are
+		They don't see each other; but ARP helps layer 3's IP to map to layer's 2 MAC by broadcasting the request. All computer on the domain will see the ARP request but only the correct computer can respond. After it maps to the correct node it will save that in the ARP Cache to skip the broadcasting. 
+
+				Network attacks
+	I. Network Attacks
+		a. DNS
+			i. DNS - resolves IP to names
+			ii. DNS Cache saves the resolution of a DNS Server to speed up the process
+			iii. Resolve www.google.com 
+			iv. If DNS Cache is down it will use a DNS Server's DNS Zone. If the answer is not there it can use the  DNS Server's DNS Cache. If the answer is not there it will use the Root DNS server who asks com server who is www.google.com. The Com server sends the request to Google's DNS Server. Google DNS server will send the answer back to the DNS server's Cache which allows nodes to save it to their DNS cache.
+		b. DNS Attacks
+			i. DNS Poisoning
+				1) Send malicious response to request to DNS Server to save to DNS Cache that will save to DNS server's Cache.  
+			ii. DNS Hijacking 
+				1) Manipulate preferred DNS Server on a network adapter to a malicious DNS server. To control where user's DNS resolves to. 
+			iii. Domain Hijacking 
+				1) Domain transfer to another register to steal the domain; this can also be done by asking to copy the domain for redundancy. Normally happens after a domain owner's account is compromised.
+			iv. EXTRA/NOTE
+				1) C:\Windows\System32\drivers\etc\Hosts.file
+					a) Static mapping of IP to server name resolution on a windows machine
+					b) If Hosts file can be used maliciously; some browsers ignore the host.file due to this. 
+		c. Layer 2 Attacks
+			i. ARP Poisoning 
+				1) ARP broadcast request intercepted by a threat actor. Saves the threat actor to the ARP Cache; redirecting traffic to the threat actor. 
+			ii. MAC Cloning
+				1) Manipulates MAC representation in software to get data sent to threat actor. 
+			iii. MAC Flooding
+				1) Switch MAC table (saved MAC from previous devices) is flooded with fake MACs. Once table is full the switch will go to hub through fail-open. The Switch turned to a hub will broadcast traffic; meaning sniffing all information.
+		d. Dos (denial of service)
+			i. An interruption 
+				1) Of service
+				2) Of application
+				3) Of system
+				4) Of facilities
+		e. DDOS (Disputation denial of service) 
+			i. Group of nodes trying to DOS
+			ii. Types (you can combine these):
+				1) Reflected
+					a) Manipulates TCP/IP 
+					b) Bot Net sends request with target's spoofed IP to bring a system offline
+				2) Amplified
+					a) Increase size of request/reply
+					b) Spoofed IP of target with a botnet
+				3) Coordinated
+					a) Multiple attackers to bring a target offline
+				4) Smurf attack
+					a) An attack where ping request is sent to a broadcast network address
+					b) Uses Internet Protocol (IP) and Internet Control Message Protocols (ICMP)
+		f. Man in the Middle (MiTM)
+			i. Threat actor between a connection. Is a basis for other attacks
+		g.  Man in the Browser (MiTB)
+			i. Exploiting trust between Authenticated user and web application
+		
+
+			Wireless Attacks
+	I. Wireless attacks
+		a. Types:
+			i. Rogue Access point
+				1) Might cause DOS (accidently)
+				2) Causes users to connect this wifi instead of legit network
+			ii. Evil Twin
+				1) Same SSID's to legit access point
+			iii. Dissociation attack 
+				1) Forged frame to remove users from legitimate wifi
+		b. Initialization Vector
+			i. Encrypted with unique outputs by adding Nonce; one time addition / padding to the encryption to get a unique output.
+			ii. Threat actor will attack Initialization Vector
+				1) Initialization Vector attack
+					a) User will attack the padding to get access
+		c. RFID - Radio Frequency Identifier 
+			i. Transponder
+				1) Tag, label, credit card (chip)
+			ii. Ranges
+				1) short range 15 cenimeters 
+				2) mid-range 5 meter
+				3) long range is 500 meters
+			iii. Goals of attacking RFID:
+				1) Reverse engineering encryption 
+				2) Power analysis to determine what type of device
+				3) Eavesdropping
+				4) Cloning/Spoofing
+				5) Example is Card skimmer
+		d. NFC -Near-field Communications
+			i. Examples
+				1) Electronic payment 
+					a) threat actors targets
+				2) Eavesdropping
+				3) Data modification/theft
+				4) Relay attack 
+					a)  Exploiting the distance between NFC by using a NFC mole close to the NFC reader. It will read data on the card reader.
+		e. Jamming attack
+			i. Bring down access point by jamming it
+		f. Bluetooth
+			i. Types
+				1) Blue Jacking
+					a) Data between Bluetooth connection is being capture by threat actor
+				2) Blue Snarfing
+					a) Inputting data to Bluetooth connected device 
+
+				Vulnerabilities 
+				Weakness that can be exploited
+	I. Vulnerabilities
+		a. Weakness that can be exploited
+		b. Weak Configurations:
+			i. Defaults - any default configuration; hasn't been changed
+			ii. Weak/no Encryption
+			iii. Unsecured protocols - FTP,HTTP
+			iv. Open Permissions
+		c. Third Party 
+			i. Intellectual property theft
+			ii. Identity/Credential theft
+			iii. Network Intrusion
+			iv. Reputation damage
+			v. Vendor support
+			vi. Data
+				1) Storage
+				2) loss/leak
+				3) Theft
+				4) Cloud-based
+				5) On-premise
+			vii. Third Party : Vendor Management
+				1) Issues
+					a) Vendor reputation
+					b) Lack of visibility
+					c) Compliance risk
+				2) Benefits
+					a) Vendor Screening
+					b) Documentation
+					c) Risk management
+					d) Compliance monitoring 
+			viii. Third Party: System integration
+				1) Example 
+					a) Log in with Microsoft, google, ect
+				2) Types
+					a) Social media
+					b) Delivery systems
+					c) Payment systems
+				3) Third Party: Outsource Code
+					a) Challenges
+						i) Code quality
+						ii) Protection
+						iii) Compliance risks
+						iv) Nondisclosure agreement
+						v) SDLC issues
+			ix. Patch management 
+				1) Firmware
+				2) OS
+				3) Applications/software
+				4) Legacy systems 
+					a) software or hardware no longer supported
+					b) Lack of vendor support
+					c) No more patches or updates
+		d. Zero days
+			i. Most vulnerable
+			ii. No Vendor awareness / No patch yet
+			iii. Bug bounties
+			iv. Day 0 since patch has been released for a exploit
+
+OSINT - Open source intelligence 
+	I. OSINT - Open Source intelligence
+		a. Data that is available to the public 
+		b. Company information public
+		c. Vet this information
+		d. Examples
+			i. News media
+			ii. Census data
+			iii. Conferences/webinars
+			iv. Phone & emails
+			v. Double-edged sword
+				1) Both Sec. and threat actors have access to this
+		e. OSINT Tools
+			i. Maltego
+			ii. Recon-ng
+			iii. Shodan.io/Censys.io
+
+	I. Vulnerability database
+		a.  MITRE
+			i. Common Vulnerabilities and Exposures (CVE)
+		b. NVD - National Vulnerability database
+			i. Security content automation protocol (SCAP)
+				1) CCE - Common Configuration Enumeration
+					a) Unique identifies for system configuration issues to track
+				2) CPE - Common Platform Enumeration
+					a) Classes of applications, hardware and more under a enterprise
+				3) CVSS - Common Vulnerability scoring system 
+					a) Severity of vulnerabilities
+					b) Rating them on successfulness and threat 
+					c) Software flaws
+					d) Configuration issues
+					e) Automated configuration
+		c. US-CERT (Computer Emergency response teams) 
+			i. Vulnerability feed
+				1) Real time vulnerability updates
+				2) Examples
+					a) MITRE
+					b) National Vulnerability database
+	
+	
+
+Threat Intelligence : Threat maps
+	I. Threat Intelligence : Threat maps
+		a. Real time or near real time map
+		b. Visualization of threats 
+		c. Where from and where to
+		d. Example:
+			a. (https://threatmap.fortiguard.com/)
+			b. (https://www.fireeye.com/cyber-map/threat-map.html)
+	II. Threat Intelligence : Threat feeds
+		a. Real time data streams
+		b. Information
+		c. Threats
+		d. Risk
+		e. Domain reputation
+		f. Known Malware
+		g. IP Addresses
+		h. Example
+			a.  (https://www.virustotal.com/) 
+	III. Threat Intelligence: Indicators of compromise
+		a. Pieces of data
+		b. Identify malicious activity
+		c. Data that can be feed to SIEMs
+		d. STIX and TAXII
+		e. Examples: Fire-eye
+	IV. Threat Intelligence: AIS (Automated indicator sharing) 
+		a. Exchange cyber threat indicators
+		b. Federal government 
+		c. SLTT governments
+		d. State, local, tribal, territorial 
+		e. Private sector
+	
+
+
+Threat actors and Vectors
+	I. Threat actors
+		a. Script Kiddies
+			i. Use automation through scripts; sometimes other's script
+		b. Insider threats
+			i. Employee's or users already in-side the orginazation to do harm or steal data
+		c. Hacktivists
+			i. Group of hackers for the same cause
+		d. Advance Persistent threat (APT)
+			i. State actors
+			ii. Government sponsored threat actors
+			iii. Criminal syndicates
+		e. Competitors
+			i. Normally an insider for another company
+		f. Shadow IT
+			i. Hardware and software outside Org. Official IT Infrastructure
+				1) Can include hardware, software, and cloud
+		g. Hacker types
+			i. Black Hat
+				1) Malicious reason; normally for profit
+			ii. White Hat
+				1) Good guys
+				2) For patches and to help security
+			iii. Grey Hat
+				1) Grey area
+				2) Normally will be both black and white
+	II. Threat Vectors
+		a.  Points of attack
+		b. examples
+			i. Direct access
+			ii. Wireless
+			iii. Emails
+			iv. Supply chain
+			v. 3rd party; Vendor
+			vi. Social Media
+			vii. Removable media
+			viii. Cloud
+
++ NVD Threat Data Feed - https://nvd.nist.gov/vuln/data-feeds * US Computer Emergency Response Team \(US-CERT\) - https://www.kb.cert.org/vuls/ * Threat Feeds + Mitre Threat Feed - https://cve.mitre.org/cve/data_feeds.html + NVD Threat Feed - https://nvd.nist.gov/vuln/data-feeds
