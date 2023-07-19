@@ -1,0 +1,437 @@
+Network Recon and Discovery
+	I. General Use
+		a. Ping 
+			i. End to end communication
+		b. Tracert/traceroute
+			i. Route Discovery
+		c. Pathping
+			i. Combines Tracert and ping
+			ii. End to end communication 
+			iii. route discovery
+		d. Route
+			i. Discover and manipulate host routing table
+		e. Ipconfig/ifconfig/ip
+			i. Ip address discovery
+			ii. network interface configuration
+		f. Arp
+			i. Display and modify address resolution protocol cache
+		g. Nslookup/dig
+			i. Display and query DNS info
+		h. Netstat
+			i. Display active TCP connections
+			ii. ports
+			iii. IP address
+	II. Data Gathering
+		a. Nmap
+			i. Port scanning
+			ii.  host 
+			iii. services
+			iv. OS enumeration
+		b. Hping
+			i. Packet assembler
+		c. Scanless
+			i. Port scanner anonymizer
+			ii. Bounce port scan off website 
+			iii. Shows website as source 
+		d. The Havester
+			i. Catalogs e-mail address and subdomains
+		e. Sn1per
+			i. Automated scanner
+			ii.  open ports
+			iii.  subdomain hijacking
+			iv. DNS info
+		f. DNSEmun 
+			i. Enumerate DNS info
+		g. Nessus
+			i. Vulnerability scanner
+		h. Cuckoo
+			i. Sandbox for malware analysis
+
+Packet Capture and Replay - rewatch
+	I. Linux commands
+		a. Show IP and network information
+			i. Ifconfig
+		b. Start packet capture 
+			i. Tcpdump -I eth1
+		c. Escalate / admin
+			i. Sudo
+		d. Make FTP connection
+			i. FTP ip
+			ii. Msfadmin/P@
+		e. Capture to a file
+			i. Tcpdump -I eth1 > test-cap.txt
+		f. Stop capture and view file output
+			i. Cat -n test-cap.txt
+			ii. Grep fto-data test-cap.txt
+		g. Create a script to review capture file
+			i. Vi capsearch.sh
+		h. Make script executable
+			i. Sudo chmod +x capsearch.sh
+		i. Make a capture file exportable 
+			i. Tcpdump -I eth1 -w test-cap.pcap
+		j. Replaying packets to the network
+			i. Tcpreplay -I eth1 test-cap.pcap
+
+Vulnerability scans
+	I. Scan results
+		a. False positive
+			i. Shows vulnerability that is not there
+		b. False Negative
+			i. Does not show vulnerability that is there
+		c. True Positive
+			i. Correctly identified a vulnerability
+		d. True Negative
+			i. No threats
+	II. Scan types
+		a. Credentialed
+			i. Discovers vulnerabilities beyond auth
+			ii. Can find a greater amount of vulnerabilities
+		b. Non-credentialed
+			i. Provide an outsider view
+			ii. True black-box test
+		c. Intrusive
+			i. Greater aggressiveness
+			ii. Can be disruptive
+			iii. Helps determine impact
+		d. Non-intrusive
+			i. Less aggressive
+			ii. Information gathering
+			iii. Less disruptive
+
+Penetration testing Techniques
+	I. Penetration testing
+		a. Test org. security to attacks
+			i. External 
+			ii. Internal 
+		b. Exploitable vulnerabilities in the security systems
+			i. Vulnerability test find vulnerabilities
+			ii. Pentest exploits vulnerabilities 
+	II.  White Box testing
+		a. Operates as an insider threat
+		b. Insider will know:
+			i. platforms/systems
+			ii. Configurations
+			iii. Operating systems 
+			iv. Security implementations/controls
+	III. Black box testing
+		a. Outsider threat / external threat
+			i. Less Knowledge of the environment
+			ii. Requires recon and discovery
+			iii. Ideally tester should have similar skill levels as the attacker
+	IV. Grey box testing
+		a. Middle of the approach
+		b. Borrows from both black & white box
+	V. Rules of Engagement
+		a. Defines parameters of the test
+			i. Scoping
+				1) When & what
+			ii. Timeline for the test
+			iii. When the test will proceed
+			iv. Legal concerns
+			(Darknet Diaries - Coalfire Penetration test)
+				1) Compliance
+					a) PII 
+				2) Risk
+			v. Third-part concerns
+				1) Partner Orgs.
+				2) Vendors with network access
+	VI. Pen testing phases 
+		a. Recon
+			i. Initial access
+				1) Privilege Escalation
+					a) Pivoting/Lateral movement
+						i) Persistence
+							One. Reporting
+								First. Cleanup
+		b. Reporting is what orgs. pay for
+		c. Cleanup
+			i. Closing out penetration test
+			ii. Returning the environment to normalcy
+			iii. Removing tools 
+	VII. Bug Bounties
+		a. Responsible disclosure programs
+		b. Outside testing
+		c. Discover vulnerabilities
+		d. Provides incentive to testers
+			i. Not zero days
+
+SIEM and SOAR
+	I. SIEM - Security information and event management
+		a. Immense amount of data 
+		b. Firewall, IDDS, IPS solutions
+		c. Log, aggregate, normalize, review
+			i. Syslog data but with less clutter
+		d. All manual review 
+		e. Components
+			i. Security information management
+				1) SIM
+					a) Collects stores and aggregates log data
+					b) Firewall, servers, endpoints
+			ii. Security event management
+				1) SEM
+					a) Threat feeds
+					b) Log in logs
+					c) User and entity behavior analysis
+					d) Detects insider threat
+	II. SOAR - Security orchestration automation response
+		a. Provides an automated response
+			i. Less manual work
+		b. Streamlines response process
+		c. Used in conjunction with a SIEM 
+
+Digital Forensics Concepts
+	I. Digital Forensics
+		a. Legal Hold
+		b. Data acquisition and preservation is important 
+	II. Digital forensics concepts
+		a. Right-to audit clauses
+			i. Cloud providers won't allow anyone to audit
+				1) Normally have a 3rd party do the audit, part of SLA
+		b. Regulatory and Jurisdiction
+			i. Data isn't always kept in a single location
+				1) International laws
+			ii. Who has access to the data
+		c. Data Breach notification
+			i. Time pass before required by law to notify customer/users of breach
+	III.  Data Acquisition
+		a. Order of Volatility
+		b. Most Volatility
+			i. CPU cache
+			ii. Registers
+		c. Second Volatile
+			i. Routing table, process table, ARP cache, Kernel stats
+		d. Third volatile
+			i. RAM - Random-access memory
+			ii. Loses with power
+		e. Fourth Volatile
+			i. Temp files
+				1) Page files
+				2) Swap files
+			ii. Lost with power
+		f. Fifth volatile 
+			i. Disk
+			ii. Snapshots
+		g. Least Volatile 
+			i. Archival data
+			ii. Backup
+			iii. Print outs
+	IV. Data preservation and documentation
+		a. Time stamps
+		b. Time offset
+		c. Reports and logs
+		d. Interviews
+		e. Integrity
+			i. Hashing
+			ii. Checksums
+				1) Verifies data hasn't changed
+			iii. Provenance
+				1) Chain of custody
+	V. Chain of custody
+		a. Form
+			i. Item, description, recovered by, date/time
+			ii. More details the better
+	VI. Tools
+		a. FDK imager 
+		b. WinHex
+		c. Autopsy
+		d. EnCase Forensic
+
+Incident response process
+	I. Incident response process
+		a. Preparation
+		b. Identification
+		c. Containment
+		d. Eradication
+		e. Recovery
+		f. Lessons learned 
+	II. Identification
+		a. Analysis of events
+		b. Components
+			i. Monitoring
+			ii. Detecting
+				1) Indicators of compromise
+			iii. Alerting
+			iv. Logging
+	III. Containment
+		a. Response phase
+		b. Interact with affected systems
+		c. System shutdown 
+			i. Coordinated shutdown
+		d. System isolation
+	IV. Eradication phase
+		a. Malware
+			i. Deep scan
+			ii. Quarantine 
+			iii. Removal
+		b. Wipe and load
+			i. Wipe operating system then reload it
+		c. Verification of eradication 
+			i. Verify other systems are not infected
+	V. Recovery 
+		a. Verification of eradication (Required)
+		b. Rebuild from backups
+		c. Reintroduce systems
+		d. Restore normal operations
+	VI. Lessons learned
+		a. What went right
+		b. What went well
+		c. What went wrong
+		d. What was affected
+		e. How was the attack accomplished
+		f. Improvements
+
+Pentesting Exercise Types
+	I. Red team
+		a. Offensive security
+		b. Defense mechanism testing
+		c. Determine resiliency
+		d. Test blue team capabilities
+		e. Examples / Skills
+			i. Penetration testing
+			ii. Computer system and protocols
+			iii. Software development skills
+			iv. Communication interception
+			v. Social engineering skills
+			vi. Site security
+			vii. Attack frameworks
+	II. Blue team
+		a. Defensive security
+		b. Identify potential vulnerabilities
+		c. Monitoring, detection, and reaction
+		d. Examples / Skills
+			i. Security strategy
+			ii. Analysis skills
+			iii. Hardening techniques
+			iv. System detection tools
+				1) Honeypots
+				2) EDR
+				3) Firewall
+				4) IDS/IPS
+				5) Packet analysis
+				6) Syslog
+			v. Knowledge of computer networks
+	III. Purple team
+		a. Single team utilizing red/blue methods
+			i. Defensive and offensive security 
+		b. Reasons for purple
+			i. Limited resources
+	IV. White team
+		a. Enforces Rule of Engagement 
+		b. Resolves disputes 
+		c. Derive lessons-learned
+		d. Post exercise/engagement assessment 
+
+Incident response plans 
+	I. Incident response team
+		a. Authority and jurisdiction
+			i. Legality
+			ii. Kick off plan and process
+		b. IT security team
+		c. Technical experts
+			i. System admins
+			ii. Dev. Admins
+		d. Law enforcement
+	II. Incident response plan
+		a. Stakeholder management
+			i. How do they get notified
+			ii. When do they get notified
+			iii. Who notifies them 
+		b. Business continuity plan (BCP)
+			i. Functional operation after a incident
+		c. Disaster and Recovery Plan (DRP)
+			i. Manmade Disaster
+			ii. Natural disaster 
+				1) Recovery sites
+		d. Communication plan
+			i. Who do we talk to
+			ii. Public relations
+			iii. Thoroughly documentation 
+		e. BCDRP (Business continuity and disaster recovery plan) 
+		f. Retention Policy
+			i. How long to keep documentation of an incident 
+	III. Incident response plan (Federally) 
+		a. Continuity of operations
+			i. United States initiative PPD-40 
+			ii. Federal government departments
+			iii. Essential operations during emergencies 
+	IV. Incident response plan - Exercises
+		a. Tabletop
+			i. Discussion of incident exercises
+		b. Walkthroughs
+			i. Each process with each team member 
+			ii. Trains each team member with their responsibilities
+		c. Simulations
+			i. See how the team responds to an actual incident
+				1) Could be Org. wide  or a specific component
+
+Investigation data sources
+	I. SIEM
+		a. Big picture
+		b. Lots of logs
+	II. Network
+		a. Cisco Netflow
+		b. RFC
+			i. IPFix
+				1) Serves as a mean for transmitting Traffic flow information over the network
+		c. Wireshark
+	III. Windows logs
+		a. Event viewer
+			i. Application, security, and system logs
+			ii. DNS 
+		b. Dump files
+	IV. Linux logs
+		a. JournalCTL
+			i. Analyze JournalD
+			ii. D is the system
+		b. Nxlog
+			i. Upgraded Syslog
+			ii. Centralized logging
+	V. Meta data
+		a. Data that describes data
+			i. Under the hood of data
+		b. Able to see this in gui or command line
+	VI. 
+
+Attack frameworks
+	I. Attack frameworks
+		a. Describe incidents in common languages 
+		b. Used to understand
+			i. Adversaries
+			ii. Techniques
+			iii. Tactics
+			iv. Detection mechanisms
+	II. MITRE ATT&CK
+		a. Adversarial tactics, techniques, & Common Knowledge
+		b. Identification numbers
+		c. Tactics
+		d. Data sources
+		e. Creation/modification date
+			i. Older techniques modified
+		f. Attack.mitre.org
+	III. Diamond model of intrusion analysis
+		a. Emphasis on relationships and characteristics
+		b. Core features
+			i. Adversaries
+			ii. Victim
+			iii. Infrastructure 
+			iv. Capabilities
+		c. Meta-features
+			i. Timestamps
+			ii. Results
+			iii. Direction
+			iv. Resources
+		d. Confidence value
+			i. Level of quality 
+			ii. Confidence of accuracy of report
+	IV. Cyber kill chain
+		a. Phase 1 Recon
+			i. Find vulnerability
+		b. Phase 2 Weaponization
+			i. Exploit creation
+		c. Phase 3 Delivery
+			i. Deliver exploit
+		d. Phase 4 Exploitation
+			i. Triggers exploit
+		e. Phase 5 installation
+		f. Phase 6 Command and control 
+		g. Phase 7 Actions on objective
