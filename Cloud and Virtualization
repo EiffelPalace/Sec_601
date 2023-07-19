@@ -1,0 +1,249 @@
+Virtualization
+	I. Virtualization
+		a. Crating a logical representation of computing technologies
+		b.  examples
+			i. Computers
+			ii. Operating systems
+			iii. Network adapters
+			iv. Network devices
+				1) Firewalls
+				2) Switches 
+		c. Host machines
+			i. Physical device
+			ii. Controls guests
+			iii. Allocation of resources
+				1) CPU
+				2) Memory
+				3) Storage
+				4) Network adapter
+		d. Guest Machines
+			i. Run on Host machine
+			ii. VM / Virtual machines
+			iii. Logical representations
+			iv. Isolated from the host
+			v. Function like physical devices
+		e. Hypervisors
+			i. Resource allocation
+			ii. Between Host machine and VMs
+			iii. Type 1 hypervisor
+				1) Most common for business
+					a) Runs on physical device itself
+					b) saleable
+					c) Used in Cloud VMs
+				2) Type 2 hypervisor
+					a) Between Operating system and VMs
+					b) Operating system controls physical resources 
+		f. Virtual Network adapter
+			i. Splits NIC on host machine for VMs
+		g. Virtual networking 
+			i. V switch
+				1) VM to VM
+					a) True isolation
+				2) VM to Host
+					a) Allows communication between VM and Host machine
+				3) VM to LAN
+		h. Containers
+			i. Isolated instances of preconfigured VMs
+			ii. Container engines
+				1) Docker Hub
+				2) Oracle Cloud Infrastructure compute
+				3) Canonical LXD
+				4) Amazon Elastic Container service
+		i. Considerations
+			i. Virtualization
+				1) Multiple software environments
+				2) Better resource utilization 
+				3) Scalable
+			ii. VMs
+				1) Isolated software environments
+				2) Requires configuration
+				3) Need to be secure 
+			iii. Containers
+				1) Ease of configuration
+				2) Less overhead
+				3) Platform independent 
+				4) Portability
+
+Cloud Concepts
+	I. Cloud computing
+		a. Delivery of computing services over the internet
+			i. Using somebody else network
+			ii. Similar to how the internet works 
+			iii. Borrowing hardware
+	II. Cloud service provider (CSP)
+		a. Organization providing cloud computing services 
+		b. Examples
+			i. Azure
+			ii. AWS
+			iii. Google Cloud Platform
+		c. Tenant
+			i. Single customer on CSP
+		d. Multi-tenant
+			i. Multi-CSP on 
+		e. Tenant isolation 
+			i. Blocks access to other customers / tenants
+		f. On-Demand Self
+			i. Company can change service as needed without reaching out to the vendor
+		g. Broad network access
+			i. Can connect to services through any device
+		h. Resource pooling
+			i. Ability to resources and group them to allow multiple companies to access a partition of the pool 
+		i. Rapid Elasticity
+			i. Rapidly scale infostructure on demand
+			ii. Scalable
+		j. Measured Service
+			i. Everything is monitored
+			ii. How much resources did you use
+			iii. Cloud providers can see price
+			iv. Customers can see price if cloud is worth the price
+
+Cloud services
+	I. Cloud service types
+		a. Software as a service (SaaS)
+			i. Applications provided on cloud infrastructure 
+				1) Office 365
+				2) G Suite
+				3) Sales force
+		b. Platform as a service (PaaS)
+			i. Runtime environment provided on cloud infrastructure
+			ii. Allows for testing software without needing to setup
+		c. Infrastructure as a service (IaaS)
+			i. Organization providing cloud computing service
+				1) VMs
+				2) Virtual Networks
+		d. Anything as a Service (XaaS)
+			i. Every and any service provided on cloud infrastructure
+				1) Containers as a service (CaaS)
+				2) Code as a service (CaaS)
+				3) Storage as a service (STaaS)
+				4) Desktop as a service (DaaS)
+				5) Security as a service (SECaaS)
+				6) Database as a service (DBaaS) 
+		e. Management responsibilities
+
+			
+
+Cloud models
+	I. Cloud Models - Public
+		a. Available to general public 
+			i. Microsoft Azure
+			ii. AWS
+			iii. Google cloud platform
+		b. Very popular
+		c. Infrastructure is already setup
+	II. Cloud Models - private
+		a. Internal private cloud
+		b. VPC - virtual private cloud
+			i. Purchase a rack of servers at a data center
+			ii. Vendors have options for this
+		c. Company can hosts / owns the infrastructure
+	III. Cloud Models - Community 
+		a. More than one org. have a goal together
+		b. Example
+			i. Medical practice and insurance provider share a cloud
+		c. Same security compliance
+	IV.  Cloud Model - Hybrid
+		a. Both on-prem and cloud infrastructure 
+		b. Most common types
+		c. Transit gateway
+			i. Way in and out of cloud
+	
+
+Cloud Security Controls
+	I. Resource Polices and permissions
+		a. Define 
+			i. Who has access
+			ii. What actions can be preformed
+				1) Read vs modifications
+				2) Concept of least privilege
+		b. Similar to on-prem controls
+			i. Permissions
+				1) NTFS
+				2) Read, write, exe
+	II. Network segmentation and subnets 
+		a. Virtual network
+			i. Segmentation
+			ii. Public subnet
+				1) Web Servers
+				2) DMZ
+			iii. Secure web gateway 
+				1) DNS filtering
+				2) URL filtering
+				3) Intrusion prevention 
+			iv. Private subnet
+				1) Similar to LAN subnets
+			v. VPC EP
+				1) Allows connection from Public subnet to private subnet 
+				2) Web servers to connecting to database servers
+			vi. Cloud Access Service Broker (CASB)
+				1) Who, what, and where is access resources in the cloud
+
+
+	III. Storage
+		a. Permissions
+			i. Principle of least privilege
+			ii. Encryption
+			iii. Replication
+				1) Geographically disbursed
+	IV. Compute considerations
+		a. Security group
+			i. Virtual firewall
+				1) Inbound rules
+				2) Outbound rules
+				3) Protocol filtering
+		b. Container security
+			i. Host security
+			ii. Application
+				1) Doesn't matter how secure the device is if the application has flaws
+			iii. Network traffic
+				1) Device sending unsecure traffic is still unsecure
+			iv. Least privilege
+	V. Secrets Management
+		a. Like an HSM
+			i. Like a key vault or password management but for encryption keys
+			ii. Stores, manages and rotates 
+				1) API Keys
+				2) Certificates
+				3) SSH keys
+				4) Passwords
+
+Computing types
+	I. Cloud Computing
+		a. Data is being used off-site on the cloud
+		b. Small delay
+	II.  Edge computing
+		a. Device to do their own calculations
+		b. Real time 
+	III. Fog Computing
+		a. Between cloud and edge
+		b. To off load processing power
+		c. IOT gateway sends data to fog nodes to send back to IOT gateway
+1. Managed service providers (MSP)
+		a. Outsourced managing of IT infrastructure 
+		b. Examples
+			i. Network 
+			ii. Applications
+			iii. Infrastructure
+			iv. Security
+	I. Managed Security service Provider (MSSP)
+		a. Outsourced monitoring management of security
+		b. Examples
+			i. Monitoring, detection, alerting
+			ii. Firewall Management
+			iii. VPN services
+2. Software defined networking
+		a. Abstract hardware to redefine how traffic flows 
+	I. Application layer
+		a. Business applications
+		b. Talks to control layer
+			i. Northbound API 
+				1) REST API
+	II. Control Layer
+		a. SDN controller 
+			i. Orchestrator of communication 
+			ii. Talks to Infrastructure Layer
+				1) Southbound API 
+					a) OpenFlow
+					b) This allows different device to talk to each other regardless of code
+	III. Infrastructure layer
+		a. Network devices
