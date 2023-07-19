@@ -1,0 +1,154 @@
+Hardware Redundancy
+	I. Fault Tolerance and Redundancy
+		a. Withstand failure of one or more components
+		b. More than one
+	II. High Availability
+		a. How closely does a system achieve 100% uptime
+
+
+	III. RAID
+		a. Redundant array of independent disks
+		b. RAID 0 -Striping
+			i. Two disc to 32 disks
+			ii. Splits data between disks
+			iii. Doesn't offer redundancy but is better performance
+				1) If one drive goes down you lose all data
+				2) No storage overhead
+		c. RAID 1 -Mirroring
+			i. Complete copy 
+			ii. At least two discs
+			iii. Duplexing
+				1) Give each drive a raid controller
+				2) Give redundancy
+			iv. Performance decrease
+			v. 50% Storage overhead 
+		d. RAID 5 - Striping w/ parity
+			i. At least three disks
+			ii. If one disks failed still operational due to parity has the missing drive 
+				1) When replaced failed drive it will rewrite the drive data with the parity
+			iii. Fault Tolerance
+				1) Unless two drives are lost
+			iv. 1/X storage overhead
+				1) X = Number of drives
+		e. RAID 10 - 0+1
+			i. At least four disks
+			ii. Strip and mirroring
+				1) Two disk Striping
+				2) Two disk mirroring strip
+			iii. Performance increase
+			iv. Redundancy
+				1) Till both strips are fail 
+	IV. San - Storage Area Network
+		a. Collection of Drives
+
+
+	I. NIC Teaming
+		a. Two NICs on one server
+		b. Using the same gateway
+		c. Used for fault tolerance or for performance 
+			i. Can use both NICs at the same time to get faster speed
+			ii. If one fails the other  is still there
+	II. Load Balancers
+		a. Server Cluster is a grouping of servers that disturbs the workload across 
+			i. Cluster controller disturbs the workload 
+		b. Load Balancer can disturb the incoming request to different clusters
+	III. Power Redundancy
+		a. Dual power supply
+			i. More than one PSU
+			ii. For Redundancy
+		b. UPS 
+			i. Battery Backup
+			ii. Power for building is lost then it allows for a graceful shutdown
+		c. Server rack
+			i. Connects to Managed PDUs
+			ii. Able to see the power usage on equipment
+		d. Generators
+			i. Diesel generator
+			ii. Computer equipment requires a stable flow of electric so gas generator won't work 
+
+Site Redundancy
+	I. Hot Site
+		a. Backup facility
+		b. Fully equipped site
+			i. Server 
+			ii. Storage
+			iii. Applications
+			iv. Network devices
+			v. Telephony systems 
+	II. Cold site
+		a. Backup Facility
+		b. Not equipped
+		c. Office space
+	III. Warm site
+		a. Backup Facility
+		b. Mostly equipped
+		c. Needs a moderate amount of configuration
+	IV. Comparison
+
+
+	VI. Considerations
+		a. Location
+			i. Not near the actual site
+			ii. Consider natural disasters 
+				1) Tornados, Hurricanes, earthquakes, fires
+			iii. To get to the location
+			iv. Resources around the locations
+				1) EMS and 911 response time
+				2) Food
+
+Non-persistence concepts 
+	I. Last Known Good
+		a. Boot configuration state
+		b. Uses with boot failures
+			i. Revert to last known good state
+		c. Mostly used in windows
+		d. Will overwrite last known good when logged in
+	II. Known State
+		a. Revert to Known state
+			i. Baselines
+			ii. Desired state configuration
+				1) Windows specific
+				2) Consistent configuration
+			iii. Snapshots in VMs
+			iv. System restore in windows
+	III. Live boot media
+		a. Linux live boot
+			i. Memory resident operating system
+			ii. Doesn't affect internal drive
+			iii. Runs in RAM
+		b. Reboot will reset and not save 
+		c. Recovery environments 
+			i. Runs in RAM
+		d. Offline antivirus
+		e. Media
+			i. CD/DVD
+			ii. USB
+			iii. PXE boot
+		f. Virtual desktop
+			i. Like a normal desktop but once logged out it will scrub that environment
+
+Backup and Recovery
+	I. Backup Types
+		a. Specify data to preserve
+		b. Archive bit
+			i. Saved data before next backup
+		c. Start with full backup
+		d. Backup time vs restore time
+	II. Backup types - Full backup
+		a. Clears archive bits
+		b. Backup all the data
+		c. Doesn't care about archive bits / modifications
+			i. backup all data 
+		d. Need 1 backup set
+		e. Pricey due to storage usage 
+	III. Backup types - Differential backup
+		a. Finds archive bits / modifications
+			i. Only adds those to the backup
+		b. Does not clear the archive bits 
+			i. Adds it to the next differential backup
+			ii. Will keep adding till archive bits are cleared
+	IV. Backup types - incremental backup
+		a. Clears archive bit
+		b. Backups only the new modifications 
+		c. Does not add the previous incremental backup 
+			i. May need multiple backups to get all data back
